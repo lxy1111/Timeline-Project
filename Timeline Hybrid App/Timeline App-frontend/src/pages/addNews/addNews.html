@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            分享
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <textarea style="height: 200px; width: 100%; font-size: 1.8rem" type="text" [(ngModel)]="content" placeholder="分享新鲜事……" required></textarea>
+    <ion-input style="display: disabled" type="file" name="image" [(ngModel)]="image"></ion-input>
+    <button ion-button block (click)="addNews(image,content)">发  布</button>
+
+</ion-content>

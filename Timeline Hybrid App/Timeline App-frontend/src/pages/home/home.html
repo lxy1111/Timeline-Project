@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>首页</ion-title>
+    <button style="background-color: #f8f8f8;
+    font-weight: bolder;
+    color: #488aff;
+    font-size: 3.0rem;
+    " (click)="openAddNewsPage()">
+    <ion-icon name="add-circle"></ion-icon>
+  </button>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content padding class="tutorial-page">
+  
+  <ion-refresher 
+        (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content style="margin-top:0px;"
+          pullingIcon="arrow-dropdown"
+          pullingText="下拉刷新"
+          refreshingSpinner="circles"
+          refreshingText="正在刷新...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+  <ion-slides pager loop="true" 
+                    autoplay="1500" 
+                    style="margin-top: 0px;  max-height: 300px;">
+    <ion-slide *ngFor="let slide of mySlide">
+      <img [src]="slide.image" class="slide-image"/>
+    </ion-slide>
+  </ion-slides>
+
+    <div>
+  
+      <ion-list>
+          <ion-list-header style="font-size:15px;">全  部  分  享</ion-list-header>    
+
+          <ion-item *ngFor="let news of myNews">
+
+              <h2 style="font-size:1.9rem; color:black; font-weight:bolder;">{{news.author}}</h2>
+              <h2 style="font-size:1.4rem; color:grey; font-weight:light;">{{news.time}}</h2>
+          
+              <ion-scroll style="margin-left: -13px;
+                margin-right: -19px;
+                padding:0px;
+                white-space:normal; 
+                min-width:100%; 
+                margin-top:10px;
+                height:85px; 
+                margin-bottom:10px; 
+                color:#000000c2;" scrollX="true" scrollY="true">{{news.content}}</ion-scroll>
+
+              <img *ngIf="news.imageURL!=''" style="width: 100%; height: 100%" [src]="news.imageURL">
+
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon style="color:red;" name="heart"></ion-icon>
+                  <div style="color:black;">Like</div>
+                </button>
+              </ion-col>
+            </ion-row>
+              
+            </ion-item>
+            
+      </ion-list>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+        style="font-size: 18px;"
+        loadingSpinner="bubbles"
+        loadingText="加载更多">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</div>
+</ion-content>
