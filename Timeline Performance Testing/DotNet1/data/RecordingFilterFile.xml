@@ -1,0 +1,1074 @@
+<FilterConfigurations Version="9.0.0.647">
+  <Configuration Name="Recorder">
+    <Environments>
+      <Environment Name="ADO.NET"/>
+      <Environment Name=".NET Remoting"/>
+      <Environment Name="Enterprise Services"/>
+      <Environment Name="WCF"/>
+    </Environments>
+    <Assemblies>
+      <Assembly Name="mscorlib" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Include"/>
+      <Assembly StrongName="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system" Environment="WCF" Action="Include"/>
+      <Assembly StrongName="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.data" Environment="ADO.NET" Action="Include"/>
+      <Assembly StrongName="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Name="system.data.sqlserverce" Environment="ADO.NET" Action="Include"/>
+      <Assembly StrongName="System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.data.oracleclient" Environment="ADO.NET" Action="Include"/>
+      <Assembly StrongName="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" Name="oracle.dataaccess" IsOptionalLoadedAssembly="True" Environment="ADO.NET" Action="Include"/>
+      <Assembly StrongName="Sybase.Data.AseClient, Version=1.1.475.0, Culture=neutral, PublicKeyToken=26e0f1529304f4a7" Name="sybase.data.aseclient" IsOptionalLoadedAssembly="True" Environment="ADO.NET" Action="Include"/>
+      <Assembly StrongName="System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.runtime.remoting" Environment=".NET Remoting" Action="Include"/>
+      <Assembly StrongName="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Name="system.enterpriseServices" Environment="Enterprise Services" Action="Include"/>
+      <Assembly StrongName="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.transactions" Action="Include"/>
+      <Assembly StrongName="System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.servicemodel" Environment="WCF" Action="Include"/>
+      <Assembly StrongName="System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Name="system.runtime.serialization" Environment="WCF" Action="Include"/>
+    </Assemblies>
+    <Filter>
+      <Namespace Name="System" Action="Default">
+        <Class Name="AppDomain" Action="Exclude"/>
+        <Class Name="Activator" Environment=".NET Remoting,Enterprise Services" Action="Exclude">
+          <Method Name="GetObject" Environment=".NET Remoting" Action="Include"/>
+          <Method Name="CreateInstance" Environment=".NET Remoting,Enterprise Services" Action="Include"/>
+          <Method Name="CreateInstance`1" Environment=".NET Remoting,Enterprise Services" Action="Include"/>
+        </Class>
+        <Namespace Name="Collections" Environment="WCF" Action="Default">
+          <Namespace Name="ObjectModel" Environment="WCF" Action="Default">
+            <Class Name="Collection`1" KnownInstance="True" Environment="WCF" Action="Include"/>
+          </Namespace>
+          <Namespace Name="Generic" Action="Default">
+            <Class Name="List`1" Action="Default">
+              <Class Name="Enumerator" KnownInstance="True" Action="Include"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace Name="Net" Action="Default">
+          <Class Name="NetworkCredential" Action="Include"/>
+          <Class Name="LazyAsyncResult" Environment="WCF" Action="Default">
+            <Method Name="InvokeCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+          </Class>
+          <Class Name="BufferAsyncResult" Environment="WCF" Action="Default">
+            <Method Name="InvokeCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+          </Class>
+          <Class Name="ListenerAsyncResult" Environment="WCF" Action="Default">
+            <Method Name="InvokeCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+          </Class>
+          <Namespace Name="Sockets" Action="Default">
+            <Class Name="OverlappedAsyncResult" Environment="WCF" Action="Default">
+              <Method Name="InvokeCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace Name="Threading" Action="Default">
+          <Namespace Name="Tasks" Action="Default">
+            <Class Name="Task" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Default">
+              <Method Name="GetAwaiter()" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="Task`1" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Default">
+              <Method Name="GetAwaiter()" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Class Name="WaitHandle" Action="Default">
+            <Method Name="Close" KnownInstance="True" Action="Include"/>
+            <Method Name="SignalAndWait" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitAll" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitAny" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitOne" KnownInstance="True" Action="Include"/>
+          </Class>
+          <Class Name="Mutex" Action="Exclude"/>
+          <Class Name="Semaphore" Action="Exclude"/>
+        </Namespace>
+        <Namespace Name="Xml" Environment="ADO.NET,WCF" Action="Exclude">
+          <Class Name="XmlDataDocument" Environment="ADO.NET" Action="Default">
+            <Method Name=".ctor" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Load" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Save" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_DataSet" Environment="ADO.NET" Action="Include"/>
+          </Class>
+          <Class Name="XmlDictionaryReaderQuotas" KnownInstance="True" Environment="WCF" Action="Include">
+            <Method Name="get_MaxArrayLength" Environment="WCF" Action="Exclude"/>
+            <Method Name="get_MaxBytesPerRead" Environment="WCF" Action="Exclude"/>
+            <Method Name="get_MaxDepth" Environment="WCF" Action="Exclude"/>
+            <Method Name="get_MaxNameTableCharCount" Environment="WCF" Action="Exclude"/>
+            <Method Name="get_MaxStringContentLength" Environment="WCF" Action="Exclude"/>
+          </Class>
+        </Namespace>
+        <Namespace Name="Data" Environment="ADO.NET" Action="Exclude">
+          <Namespace Name="Common" Environment="ADO.NET" Action="Default">
+            <Class Name="DataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetFillLoadOption" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ShouldSerializeAcceptChangesDuringFill" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="ShouldSerializeFillLoadOption" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="ShouldSerializeTableMappings" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_AcceptChangesDuringFill" Environment="ADO.NET" Action="TotallyExclude"/>
+              <Method Name="get_AcceptChangesDuringUpdate" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_ContinueUpdateOnError" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_Container" Environment="ADO.NET" Action="TotallyExclude"/>
+              <Method Name="get_FillLoadOption" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_ReturnProviderSpecificTypes" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_UpdateBatchSize" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_Site" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_AcceptChangesDuringFill" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_AcceptChangesDuringUpdate" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_ContinueUpdateOnError" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_FillLoadOption" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_ReturnProviderSpecificTypes" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_UpdateBatchSize" Environment="ADO.NET" Action="Include"/>
+              <Method Name="add_FillError" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_FillError" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="DataColumnMapping" Environment="ADO.NET" Action="Include">
+              <Method Name="get_DataSetColumn" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_SourceColumn" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="DataTableMapping" Environment="ADO.NET" Action="Include">
+              <Method Name="get_DataSetTable" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_SourceTable" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="DbCommand" Environment="ADO.NET" Action="Default">
+              <Method Name="get_DesignTimeVisible" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="DbCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="DbConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="EnlistTransaction" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSchema" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_ServerVersion" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_DataSource" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_StateChange" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_StateChange" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="DbDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetEnumerator" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="GetProviderSpecificFieldType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="GetProviderSpecificValue" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetProviderSpecificValues" Environment="ADO.NET" Action="Include"/>
+              <Method Name="get_HasRows" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_VisibleFieldCount" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" Environment="ADO.NET" EmptyInputArray="2" Action="Include"/>
+            </Class>
+            <Class Name="DbParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetDbType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="get_SourceColumnNullMapping" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_SourceColumnNullMapping" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="DbTransaction" Environment="ADO.NET" Action="Default">
+              <Method Name="Dispose" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="SqlClient" Environment="ADO.NET" Action="Default">
+            <Class Name="SqlCommand" Environment="ADO.NET" Action="Default">
+              <Method Name="get_Notification" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_NotificationAutoEnlist" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="SqlCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="SqlConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="get_FireInfoMessageEventOnUserErrors" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_PacketSize" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_StatisticsEnabled" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_WorkstationId" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="SqlDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="SqlDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetSqlBinary" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlBoolean" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlByte" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlBytes" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlChars" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlDateTime" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlDecimal" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlDouble" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlGuid" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlInt16" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlInt32" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlInt64" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlMoney" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlSingle" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlString" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlValue" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetSqlXml" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="SqlParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetSqlDbType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_CompareInfo" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_LocaleId" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_Offset" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_SqlDbType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_SqlValue" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_UdtTypeName" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_XmlSchemaCollectionDatabase" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_XmlSchemaCollectionName" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_XmlSchemaCollectionOwningSchema" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_CompareInfo" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_LocaleId" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_Offset" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_SqlDbType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_SqlValue" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_UdtTypeName" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_XmlSchemaCollectionDatabase" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_XmlSchemaCollectionName" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_XmlSchemaCollectionOwningSchema" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="SqlStream" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Class Name="SqlTransaction" Environment="ADO.NET" Action="Default">
+              <Method Name="Save" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Odbc" Environment="ADO.NET" Action="Default">
+            <Class Name="OdbcCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="OdbcConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="get_Driver" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OdbcDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OdbcDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetDate" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetTime" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OdbcParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetOdbcType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_OdbcType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_OdbcType" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="OleDb" Environment="ADO.NET" Action="Default">
+            <Class Name="OleDbCommandBuilder" Environment="ADO.NET" Action="Include">
+            </Class>
+            <Class Name="OleDbConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="get_Provider" Environment="ADO.NET" Action="TotallyExclude"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OleDbDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OleDbDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetTimeSpan" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OleDbParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetOleDbType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_OleDbType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_OleDbType" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="OracleClient" Environment="ADO.NET" Action="Default">
+            <Class Name="OracleCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="OracleDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OracleDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetOracleBFile" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleBinary" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleDateTime" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleLob" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleMonthSpan" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleNumber" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleString" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleTimeSpan" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleValue" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleValues" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetTimeSpan" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OracleParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetOracleType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_OracleType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_OracleType" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OracleCommand" Environment="ADO.NET" Action="Default">
+              <Method Name="ExecuteReader" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OracleConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="CreateCommand" Environment="ADO.NET" Action="Include"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OracleLob" Environment="ADO.NET" Action="Include">
+              <Method Name="Read" Environment="ADO.NET" EmptyInputArray="0" Action="Include"/>
+            </Class>
+            <Class Name="OracleBFile" Environment="ADO.NET" Action="Include">
+              <Method Name="Read" Environment="ADO.NET" EmptyInputArray="0" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Interface Name="IDbCommand" Environment="ADO.NET" Action="Include">
+            <Method Name="Cancel" Environment="ADO.NET" Action="Include"/>
+            <Method Name="CreateParameter" Environment="ADO.NET" Action="Include"/>
+            <Method Name="ExecuteNonQuery" Environment="ADO.NET" Action="Include"/>
+            <Method Name="ExecuteReader" Environment="ADO.NET" Action="Include"/>
+            <Method Name="ExecuteScalar" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Prepare" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_Connection" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_Parameters" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_CommandText" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_CommandTimeout" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_CommandType" Environment="ADO.NET" Action="Exlude"/>
+            <Method Name="get_Transaction" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_UpdatedRowSource" Environment="ADO.NET" Action="Exclude"/>
+          </Interface>
+          <Interface Name="IDbConnection" Environment="ADO.NET" Action="Include">
+            <Method Name="BeginTransaction" Environment="ADO.NET" Action="Include"/>
+            <Method Name="ChangeDatabase" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Close" Environment="ADO.NET" Action="Include"/>
+            <Method Name="CreateCommand" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Open" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_ConnectionString" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ConnectionTimeout" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Database" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_State" Environment="ADO.NET" Action="Exclude"/>
+          </Interface>
+          <Interface Name="IDataReader" Environment="ADO.NET" Action="Default">
+            <Method Name="Close" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetSchemaTable" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="NextResult" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Read" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_Depth" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsClosed" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_RecordsAffected" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IDataRecord" Environment="ADO.NET" Action="Include">
+            <Method Name="GetBoolean" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetByte" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetBytes" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetChar" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetChars" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetDateTime" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetDecimal" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetDouble" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetFloat" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetGuid" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetInt16" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetInt32" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetInt64" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetString" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetValue" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetValues" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetData" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetDataTypeName" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="GetFieldType" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="GetName" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="GetOrdinal" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="IsDBNull" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_FieldCount" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Item" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IDbDataAdapter" Environment="ADO.NET" Action="Default">
+            <Method RecordOnce="True" Name="get_DeleteCommand" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_InsertCommand" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_SelectCommand" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_UpdateCommand" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_DeleteCommand" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_InsertCommand" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_SelectCommand" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_UpdateCommand" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IDbDataParameter" Environment="ADO.NET" Action="Default">
+            <Method Name="get_Precision" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Scale" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Size" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="set_Precision" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Scale" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Size" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IDbTransaction" Environment="ADO.NET" Action="Include">
+            <Method Name="Commit" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Rollback" Environment="ADO.NET" Action="Include"/>
+            <Method RecordOnce="True" Name="get_Connection" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_IsolationLevel" Environment="ADO.NET" Action="Exclude"/>
+          </Interface>
+          <Interface Name="IDataAdapter" Environment="ADO.NET" Action="Include">
+            <Method Name="Fill" Environment="ADO.NET" Action="Include"/>
+            <Method Name="FillSchema" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetFillParameters" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="Update" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_MissingMappingAction" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_MissingSchemaAction" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_TableMappings" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="ITableMappingCollection" Environment="ADO.NET" Action="Include">
+            <Method Name="Add" Environment="ADO.NET" Action="Include"/>
+            <Method Name="RemoveAt" Environment="ADO.NET" Action="Include"/>
+            <Method Name="GetByDataSetTable" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IColumnMappingCollection" Environment="ADO.NET" Action="Include">
+          </Interface>
+          <Interface Name="IDataParameter" Environment="ADO.NET" Action="Include">
+            <Method Name="get_DbType" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Direction" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsNullable" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ParameterName" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_SourceColumn" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_SourceVersion" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Value" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_DbType" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Direction" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_ParameterName" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_SourceColumn" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_SourceVersion" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Value" Environment="ADO.NET" Action="Include"/>
+          </Interface>
+          <Interface Name="IDataParameterCollection" Environment="ADO.NET" Action="Include">
+            <Method Name="get_Count" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsFixedSize" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsReadOnly" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsSynchronized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_SyncRoot" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Contains" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="IndexOf" Environment="ADO.NET" Action="TotallyExclude"/>
+          </Interface>
+          <Class Name="DataColumn" Environment="ADO.NET" Action="Include">
+            <Method Name="get_AllowDBNull" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_AutoIncrement" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_AutoIncrementSeed" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_AutoIncrementStep" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Caption" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ColumnMapping" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ColumnName" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_DataType" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_DateTimeMode" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_DesignMode" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Expression" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ExtendedProperties" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_MaxLength" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Namespace" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Ordinal" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Prefix" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ReadOnly" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Table" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Unique" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="SetOrdinal" Environment="ADO.NET" Action="Include"/>
+            <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+          </Class>
+          <Class Name="DataRelation" Environment="ADO.NET" Action="Include">
+            <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ChildColumns" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ChildKeyConstraint" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ChildTable" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DataSet" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ExtendedProperties" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_Nested" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ParentColumns" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ParentKeyConstraint" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ParentTable" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_RelationName" Environment="ADO.NET" Action="TotallyExclude"/>
+          </Class>
+          <Class Name="Constraint" Environment="ADO.NET" Action="Include">
+            <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ConstraintName" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ExtendedProperties" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_Table" Environment="ADO.NET" Action="TotallyExclude"/>
+          </Class>
+          <Class Name="DataSet" Environment="ADO.NET" Action="Include">
+            <Method Name="System.ComponentModel.IListSource.GetList" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_CaseSensitive" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DataSetName" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DefaultViewManager" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_EnforceConstraints" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ExtendedProperties" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_HasErrors" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_IsInitialized" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Locale" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Namespace" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Prefix" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Relations" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_RemotingFormat" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_SchemaSerializationMode" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_Site" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Tables" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="GetObjectData" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="WriteXml" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="WriteXmlSchema" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="set_CaseSensitive" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_DataSetName" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_EnforceConstraints" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Locale" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Namespace" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_Site" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_RemotingFormat" Environment="ADO.NET" Action="Include"/>
+            <Method Name="set_SchemaSerializationMode" Environment="ADO.NET" Action="Include"/>
+            <Method Name="add_Initialized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_MergeFailed" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_Initialized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_MergeFailed" Environment="ADO.NET" Action="Exclude"/>
+          </Class>
+          <Class Name="DataTable" Environment="ADO.NET" Action="Include">
+            <Method RecordOnce="True" Name="get_Count" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_Item" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="System.ComponentModel.IListSource.GetList" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_CaseSensitive" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ChildRelations" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Columns" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Constraints" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Container" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DataSet" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DefaultView" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DesignMode" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_DisplayExpression" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_HasErrors" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_IsInitialized" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Locale" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_MinimumCapacity" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Namespace" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_ParentRelations" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Prefix" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_PrimaryKey" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Rows" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Site" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_TableName" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="GetObjectData" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnColumnChanged" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnColumnChanging" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnRowChanged" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnRowChanging" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnRowDeleted" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnRowDeleting" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnTableCleared" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnTableClearing" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="OnTableNewRow" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="WriteXml" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="WriteXmlSchema" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="add_ColumnChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_ColumnChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_Initialized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_RowChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_RowChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_RowDeleted" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_RowDeleting" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_TableCleared" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_TableClearing" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_TableNewRow" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_ColumnChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_ColumnChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_Initialized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_RowChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_RowChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_RowDeleted" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_RowDeleting" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_TableCleared" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_TableClearing" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_TableNewRow" Environment="ADO.NET" Action="Exclude"/>
+            <!--Method Name="get_ExtendedProperties" Action="Include" Environment="ADO.NET"/-->
+            <!--Method Name="get_RemotingFormat" Action="Include" Environment="ADO.NET"/-->
+          </Class>
+          <Class Name="DataRow" Environment="ADO.NET" Action="Include">
+            <ConstraintSet Order="1" Action="Exclude">
+              <PropertyConstraint PropertyMethod="get"/>
+            </ConstraintSet>
+            <Method Name="GetColumnError" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="HasVersion" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="IsNull" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="BeginEdit" Environment="ADO.NET" Action="Include"/>
+            <Method Name="CancelEdit" Environment="ADO.NET" Action="Include"/>
+            <Method Name="EndEdit" Environment="ADO.NET" Action="Include"/>
+            <Method Name="get_HasErrors" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Item" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_ItemArray" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_RowError" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_RowState" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_Table" Environment="ADO.NET" Action="TotallyExclude"/>
+          </Class>
+          <Class Name="InternalDataCollectionBase" Environment="ADO.NET" Action="Include">
+            <Method Name="get_Item" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="IndexOf" Environment="ADO.NET" Action="TotallyExclude"/>
+            <Method Name="get_Count" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsReadOnly" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_IsSynchronized" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="get_SyncRoot" Environment="ADO.NET" Action="Include"/>
+            <Method Name="add_CollectionChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_CollectionChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="add_CollectionChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="remove_CollectionChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="OnCollectionChanged" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="OnCollectionChanging" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="Contains" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="GetEnumerator" Environment="ADO.NET" Action="Exclude"/>
+            <Method Name="Insert" Environment="ADO.NET" Action="Include"/>
+            <Method Name="InsertAt" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Add" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Remove" Environment="ADO.NET" Action="Include"/>
+            <Method Name="RemoveAt" Environment="ADO.NET" Action="Include"/>
+            <Method Name="AddRange" Environment="ADO.NET" Action="Include"/>
+            <Method Name="Clear" Environment="ADO.NET" Action="Include"/>
+          </Class>
+          <Class Name="DataTableMapping" Environment="ADO.NET" Action="Include"/>
+          <Class Name="DataColumnMapping" Environment="ADO.NET" Action="Include"/>
+        </Namespace>
+        <!-- Configuration for Remoting -->
+        <Namespace Name="Runtime" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Exclude">
+          <Namespace Name="CompilerServices" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Default">
+            <Class Name="TaskAwaiter`1" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Default">
+              <Method Name="GetResult()" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="TaskAwaiter" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Default">
+              <Method Name="GetResult()" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Remoting" Environment=".NET Remoting" Action="Exclude">
+            <Namespace Name="Activation" Environment=".NET Remoting" Action="Exclude">
+              <Class Name="UrlAttribute" Environment=".NET Remoting" Action="Exclude">
+                <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Messaging" Environment=".NET Remoting" Action="Exclude">
+              <Class Name="AsyncResult" Environment=".NET Remoting" Action="Exclude">
+                <Method Name="SyncProcessMessage" Environment=".NET Remoting" EnableHook="True" Context="AsyncCallback" Action="TotallyExclude"/>
+                <Method Name="get_AsyncWaitHandle" KnownInstance="True" Environment=".NET Remoting" Action="Include"/>
+                <Method Name="get_AsyncState" KnownInstance="True" Environment=".NET Remoting" Action="Include"/>
+              </Class>
+              <Class Name="ServerContextTerminatorSink" Environment=".NET Remoting" Action="Exclude">
+                <Method Name="AsyncProcessMessage" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="SyncProcessMessage" Environment=".NET Remoting" Action="TotallyExclude"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Services" Environment=".NET Remoting" Action="Default">
+              <Class Name="RemotingClientProxy" Environment=".NET Remoting" Action="Include"/>
+            </Namespace>
+            <Namespace Name="Channels" Environment=".NET Remoting" Action="Exclude">
+              <Namespace Name="Http" Environment=".NET Remoting" Action="Exclude">
+                <Class Name="HttpChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                </Class>
+                <Class Name="HttpClientChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Environment=".NET Remoting" Action="TotallyExclude"/>
+                </Class>
+              </Namespace>
+              <Namespace Name="Ipc" Environment=".NET Remoting" Action="Exclude">
+                <Class Name="IpcChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                </Class>
+                <Class Name="IpcClientChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Environment=".NET Remoting" Action="TotallyExclude"/>
+                </Class>
+              </Namespace>
+              <Namespace Name="Tcp" Environment=".NET Remoting" Action="Exclude">
+                <Class Name="TcpChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                </Class>
+                <Class Name="TcpClientChannel" Environment=".NET Remoting" Action="Exclude">
+                  <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="set_IsSecured" Environment=".NET Remoting" Action="Include"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Environment=".NET Remoting" Action="TotallyExclude"/>
+                </Class>
+              </Namespace>
+              <Class Name="ChannelServices" Environment=".NET Remoting" Action="Exclude">
+                <Method Name="RegisterChannel" Environment=".NET Remoting" Action="Include"/>
+              </Class>
+              <Interface Name="IClientChannelSinkProvider" Environment=".NET Remoting" Action="Include"/>
+              <Class Name="BinaryServerFormatterSinkProvider" Environment=".NET Remoting" Action="Default">
+                <Method Name=".ctor" Environment=".NET Remoting" Action="Include"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Proxies" Environment=".NET Remoting" Action="Exclude">
+              <Class Name="RemotingProxy" Environment=".NET Remoting" Action="Exclude">
+                <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Environment=".NET Remoting" Action="Include"/>
+              </Class>
+              <Class Name="RealProxy" Environment=".NET Remoting" Action="Exclude">
+              </Class>
+            </Namespace>
+            <Namespace Name="Lifetime" Environment=".NET Remoting" Action="Default">
+              <Interface Name="ILease" Environment=".NET Remoting" Action="Include">
+                <Method Name="Renew" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="get_CurrentLeaseTime" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="get_CurrentState" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="get_InitialLeaseTime" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="get_RenewOnCallTime" Environment=".NET Remoting" Action="TotallyExclude"/>
+                <Method Name="get_SponsorshipTimeout" Environment=".NET Remoting" Action="TotallyExclude"/>
+              </Interface>
+              <Interface Name="ISponsor" Environment=".NET Remoting" Action="Include">
+                <Method Name="Renewal" Environment=".NET Remoting" Action="TotallyExclude"/>
+              </Interface>
+            </Namespace>
+            <Class Name="RemotingConfiguration" Environment=".NET Remoting" Action="Include">
+              <Method Name="CustomErrorsEnabled(System.Boolean)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="IsActivationAllowed(System.Type)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="IsRemotelyActivatedClientType(System.String,System.String)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="IsRemotelyActivatedClientType(System.Type)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="IsWellKnownClientType(System.String,System.String)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="IsWellKnownClientType(System.Type)" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ApplicationName" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ApplicationId()" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_CustomErrorsMode()" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ProcessId()" Environment=".NET Remoting" Action="Exclude"/>
+            </Class>
+            <Class Name="RemotingServices" Environment=".NET Remoting" Action="Exclude">
+              <Method Name="Connect" Environment=".NET Remoting" Action="Include"/>
+              <Method Name="Disconnect" Environment=".NET Remoting" Action="Include"/>
+              <Method Name="GetLifetimeService" Environment=".NET Remoting" Action="Include"/>
+            </Class>
+            <Class Name="ObjectHandle" Environment=".NET Remoting" Action="Include">
+            </Class>
+            <Class Name="WellKnownClientTypeEntry" Environment=".NET Remoting" Action="Include">
+              <Method Name="get_ApplicationUrl" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ObjectType" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ObjectUrl" Environment=".NET Remoting" Action="Exclude"/>
+            </Class>
+            <Class Name="ActivatedClientTypeEntry" Environment=".NET Remoting" Action="Include">
+              <Method Name="get_ApplicationUrl" Environment=".NET Remoting" Action="Exclude"/>
+              <Method Name="get_ObjectType" Environment=".NET Remoting" Action="Exclude"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace Name="Transactions" Action="Default">
+          <!--Class Name="Transaction" Action="Include"/-->
+          <Class Name="TransactionScope" Action="Include"/>
+        </Namespace>
+        <Namespace Name="EnterpriseServices" Environment="Enterprise Services" Action="Default">
+          <Class Name="RemoteServicedComponentProxy" Environment="Enterprise Services" Action="Exclude">
+            <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Environment="Enterprise Services" Action="Include"/>
+            <Method Name="Dispose(System.Boolean)" KnownInstance="True" Environment="Enterprise Services" Action="Include"/>
+          </Class>
+          <Class Name="ServicedComponentProxy" Environment="Enterprise Services" Action="Exclude">
+            <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Environment="Enterprise Services" Action="Include"/>
+            <Method Name="Dispose(System.Boolean)" KnownInstance="True" Environment="Enterprise Services" Action="Include"/>
+          </Class>
+        </Namespace>
+        <Namespace Name="ServiceModel" Environment="WCF" Action="Default">
+          <Class Name="ClientBase`1" Environment="WCF" Action="Include"/>
+          <Class Name="DuplexClientBase`1" Environment="WCF" Action="Include">
+            <Method Name="get_InnerDuplexChannel" Environment="WCF" Action="Exclude"/>
+          </Class>
+          <Class Name="EndpointAddress" Environment="WCF" Action="Exclude">
+            <Method Name=".ctor" Environment="WCF" Action="Include"/>
+          </Class>
+          <Class Name="EndpointAddressBuilder" Environment="WCF" Action="Include"/>
+          <Class Name="DnsEndpointIdentity" Environment="WCF" Action="Exclude"/>
+          <Class Name="EndpointIdentity" Environment="WCF" Action="Include">
+            <Method Name="CreateDnsIdentity" Environment="WCF" Action="Exclude"/>
+          </Class>
+          <Class Name="ChannelFactory" Environment="WCF" Action="Include">
+            <Method Name="get_Endpoint" KnownInstance="True" Environment="WCF" Action="Include"/>
+          </Class>
+          <Class Name="ChannelFactory`1" Environment="WCF" Action="Include">
+            <Method Name="Close" KnownInstance="True" Environment="WCF" Action="Include"/>
+            <Method Name="BeginClose" KnownInstance="True" Environment="WCF" Action="Include"/>
+            <Method Name="EndClose" KnownInstance="True" Environment="WCF" Action="Include"/>
+          </Class>
+          <Class Name="InstanceContext" Environment="WCF" Action="Exclude">
+            <Method Name=".ctor" Environment="WCF" Action="Include"/>
+          </Class>
+          <Class Name="AsyncResult" Environment="WCF" Action="Default">
+            <Method Name="get_AsyncWaitHandle" KnownInstance="True" Environment="WCF" Action="Include"/>
+            <Method Name="get_AsyncState" KnownInstance="True" Environment="WCF" Action="Include"/>
+          </Class>
+          <Class Name="MessageHeader`1" Environment="WCF" Action="Include"/>
+          <Class Name="OperationContextScope" Environment="WCF" Action="Include"/>
+          <Class Name="OperationContext" KnownInstance="True" Environment="WCF" Action="Include">
+            <Method Name="set_Current" Environment="WCF" Action="Exclude"/>
+            <Method Name="get_RequestContext" Environment="WCF" Action="Exclude"/>
+          </Class>
+          <Class Name="WSHttpSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="NetTcpSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="NetMsmqSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="NetNamedPipeSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="MessageSecurityOverHttp" Environment="WCF" Action="Include"/>
+          <Class Name="FederatedMessageSecurityOverHttp" Environment="WCF" Action="Include"/>
+          <Class Name="MessageSecurityOverMsmq" Environment="WCF" Action="Include"/>
+          <Class Name="MessageSecurityOverTcp" Environment="WCF" Action="Include"/>
+          <!--Class Name="EnvelopeVersion" Action="Include" Environment="WCF"/-->
+          <Class Name="ReliableSession" Environment="WCF" Action="Include"/>
+          <Class Name="TcpTransportSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="NamedPipeTransportSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="MsmqTransportSecurity" Environment="WCF" Action="Include"/>
+          <Class Name="TransactionProtocol" Environment="WCF" Action="Include"/>
+          <!--Rule for (in-proc) ServiceHost recording-->
+          <Class Name="ServiceHostBase" KnownInstance="True" Environment="WCF" Action="Include"/>
+          <Class Name="ServiceHost" Environment="WCF" Action="Include"/>
+          <Namespace Name="Http" Environment="WCF" Action="Default">
+            <Class Name="HttpTransportSecurity" Environment="WCF" Action="Include"/>
+          </Namespace>
+          <Namespace Name="Dispatcher" Environment="WCF" Action="Default">
+            <Class Name="OperationFormatter" Environment="WCF" Action="Exclude"/>
+            <Class Name="ChannelHandler" Environment="WCF" Action="Default">
+              <Method Name="OnStartSyncMessagePump(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+            <!--Ignore incoming calls in OneWay callback-->
+            <Class Name="ThreadBehavior" Environment="WCF" Action="Default">
+              <Method Name="SynchronizationContextCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+            <!--Capture context of Duplex Callback-->
+            <Class Name="SyncMethodInvoker" Environment="WCF" Action="Default">
+              <Method Name="Invoke(System.Object,System.Object[],System.Object[]&amp;)" Environment="WCF" EnableHook="True" Context="DuplexCallback" Action="TotallyExclude"/>
+            </Class>
+            <!--filter out Duplex Callback aux. methods (ClaimsPrincipal and CurrentContext)-->
+            <Class Name="DispatchOperationRuntime" Environment="WCF" Action="Default">
+              <Method Name="SetClaimsPrincipalToOperationContext(System.ServiceModel.Dispatcher.MessageRpc)" Environment="WCF" Action="TotallyExclude"/>
+            </Class>
+            <Class Name="SecurityImpersonationBehavior" Environment="WCF" Action="Default">
+              <Method Name="StartImpersonation(System.ServiceModel.Dispatcher.MessageRpc&amp;,System.IDisposable&amp;,System.Security.Principal.IPrincipal&amp;,System.Boolean&amp;)" Environment="WCF" Action="TotallyExclude"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Channels" Environment="WCF" Action="Default">
+            <Class Name="ConnectionModeReader" Environment="WCF" Action="Default">
+              <Method Name="Complete()" Environment="WCF" Action="TotallyExclude"/>
+            </Class>
+            <Class Name="IOThreadScheduler" Environment="WCF" Action="Default">
+              <Method Name="CompletionCallback(System.Object)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+            <Class Name="Binding" Environment="WCF" Action="Include">
+              <Method Name="get_CloseTimeout" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="BindingElement" Environment="WCF" Action="Include"/>
+            <Class Name="SecurityBindingElement" Environment="WCF" Action="Default">
+	          <Method Name="get_EnableUnsecuredResponse" Environment="WCF" Action="Exclude"/>
+	          <Method Name="get_ProtectTokens" Environment="WCF" Action="Exclude"/>
+		    </Class>
+            <Class Name="MessageHeaders" KnownInstance="True" Environment="WCF" Action="Include">
+              <Class Name="Header" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Count" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Action" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="MessageHeader" Environment="WCF" Action="Include">
+              <Method Name="get_Actor" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_MustUnderstand" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Name" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Namespace" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Relay" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_IsReferenceParameter" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_DictionaryName" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="MessageEncoder" Environment="WCF" Action="TotallyExclude"/>
+            <Class Name="AddressingHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="ToHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="ActionHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="RelatesToHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="AddressHeader" Environment="WCF" Action="Include"/>
+            <Class Name="ActionHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="Message" Environment="WCF" Action="Include">
+              <Method Name="get_IsDisposed" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_IsEmpty" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_IsFault" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_State" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="BodyWriterMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="ContentOnlyMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="StringMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="NullMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="DelegatingMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="ReceivedMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="BufferedMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="WsrmMessageHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="WsrmAcknowledgmentHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="WsrmSequencedMessageHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="MessageIDHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="ServiceChannelManager" Environment="WCF" Action="Exclude"/>
+            <Class Name="MessageFault" Environment="WCF" Action="Include"/>
+            <Class Name="ReplyToHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="MessageVersion" Environment="WCF" Action="Include">
+              <Method Name="get_Envelope" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_Addressing" Environment="WCF" Action="Exclude"/>
+              <Method Name="get_None" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="LocalClientSecuritySettings" Environment="WCF" Action="Include"/>
+            <!-- capture ServiceHost-->
+            <Class Name="CommunicationObject" Environment="WCF" Action="Default">
+              <Method Name="Abort" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="Open" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="Close" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="BeginClose" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="BeginOpen" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="EndClose" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="EndOpen" KnownInstance="True" Environment="WCF" Action="Include"/>
+            </Class>
+            <Class Name="SocketConnection" Environment="WCF" Action="Default">
+              <!--Ignore incoming calls in duplex and async callback-->
+              <Method Name="AsyncReadCallback(System.Boolean,System.Int32,System.Int32)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+            <Class Name="PipeConnection" Environment="WCF" Action="Default">
+              <Method Name="OnAsyncReadComplete(System.Boolean,System.Int32,System.Int32)" Environment="WCF" EnableHook="False" Context="Dummy" Action="TotallyExclude"/>
+            </Class>
+            <Class Name="ServiceChannel" Environment="WCF" Action="Default">
+              <!--Capture context of Async Callback-->
+              <Class Name="SendAsyncResult" Environment="WCF" Action="Default">
+                <Method Name="CallComplete(System.Boolean,System.Exception)" Environment="WCF" EnableHook="True" Context="AsyncCallback" Action="TotallyExclude"/>
+              </Class>
+              <Method Name="OnClose" Environment="WCF" Action="TotallyExclude"/>
+            </Class>
+             <Class Name="ServiceChannelProxy" Environment="WCF" Action="Exclude">
+              <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Environment="WCF" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Security" Environment="WCF" Action="Default">
+            <Class Name="WindowsClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="UserNamePasswordClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="PeerCredential" Environment="WCF" Action="Include"/>
+            <Class Name="IssuedTokenClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="HttpDigestClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="X509CertificateInitiatorClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="X509CertificateRecipientClientCredential" Environment="WCF" Action="Include"/>
+            <Class Name="X509ClientCertificateAuthentication" Environment="WCF" Action="Include"/>
+            <Class Name="X509ServiceCertificateAuthentication" Environment="WCF" Action="Include"/>
+            <Class Name="Basic256SecurityAlgorithmSuite" Environment="WCF" Action="Exclude"/>
+            <Class Name="IdentityVerifier" Environment="WCF" Action="Include">
+              <Class Name="DefaultIdentityVerifier" Environment="WCF" Action="Exclude"/>
+            </Class>
+            <Class Name="WSSecurityOneDotOneReceiveSecurityHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="SecurityVerifiedMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="BodyWriterMessage" Environment="WCF" Action="Exclude"/>
+            <Class Name="WSSecurityOneDotOneSendSecurityHeader" Environment="WCF" Action="Exclude"/>
+            <Class Name="SecurityAppliedMessage" Environment="WCF" Action="Exclude"/>
+          </Namespace>
+          <Namespace Name="Description" Environment="WCF" Action="Default">
+            <Class Name="ClientCredentials" Environment="WCF" Action="Include"/>
+            <Class Name="ServiceEndpoint" Environment="WCF" Action="Include">
+              <Method Name="get_Address" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="get_Contract" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="get_Binding" KnownInstance="True" Environment="WCF" Action="Include"/>
+            </Class>
+              <Class Name="ClientViaBehavior" Environment="WCF" Action="Include"/>
+            <Class Name="MetadataExchangeBindings" Environment="WCF" Action="Include"/>
+            <Class Name="MetadataExchangeClient" Environment="WCF" Action="Include"/>
+            <Class Name="MetadataResolver" Environment="WCF" Action="Include"/>
+            <Class Name="MetadataImporter" Environment="WCF" Action="Include"/>
+            <Class Name="ContractDescription" Environment="WCF" Action="Include">
+              <Method Name="get_Operations" KnownInstance="True" Environment="WCF" Action="Include"/>
+              <Method Name="get_CallbackContractType" KnownInstance="True" Environment="WCF" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="MsmqIntegration" Environment="WCF" Action="Default">
+            <Class Name="MsmqIntegrationSecurity" Environment="WCF" Action="Include"/>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+      <Namespace Name="Oracle" Environment="ADO.NET" Action="Exclude">
+        <Namespace Name="DataAccess" Environment="ADO.NET" Action="Exclude">
+          <Namespace Name="Client" Environment="ADO.NET" Action="Default">
+            <Class Name="OracleCommand" Environment="ADO.NET" Action="Default">
+              <Method Name="ExecuteReader" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_AddRowid" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_AddToStatementCache" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_ArrayBindCount" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_BindByName" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_FetchSize" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_InitialLOBFetchSize" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_Notification" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_NotificationAutoEnlist" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_XmlCommandType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_QueryProperties" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_SaveProperties" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OracleCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="OracleConnection" Environment="ADO.NET" Action="Default">
+              <Method Name="CreateCommand" Environment="ADO.NET" Action="Include"/>
+              <Method Name="OpenWithNewPassword" Environment="ADO.NET" Action="Include"/>
+              <Method Name="PurgeStatementCache" Environment="ADO.NET" Action="Include"/>
+              <Method Name="SetSessionInfo" Environment="ADO.NET" Action="Include"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_StateChange" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_StateChange" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OracleDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="set_Requery" Environment="ADO.NET" Action="Include"/>
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="OracleDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetOracleBFile" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleBinary" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleBlob" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleBlobForUpdate" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleClob" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleClobForUpdate" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleDate" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleDecimal" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleIntervalDS" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleIntervalYM" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleString" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleTimeSpan" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleTimeSpanLTZ" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleTimeSpanTZ" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleValue" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleValues" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetOracleXmlType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetTimeSpan" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetXmlReader" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="OracleParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ResetOracleType" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_ArrayBindSize" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_ArrayBindStatus" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_CollectionType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="get_OracleDbType" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_OracleDbType" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Types" Environment="ADO.NET" Action="Default">
+            <Class Name="OracleBlob" Environment="ADO.NET" Action="Include">
+              <Method Name="Read" Environment="ADO.NET" EmptyInputArray="0" Action="Include"/>
+            </Class>
+            <Class Name="OracleBFile" Environment="ADO.NET" Action="Include">
+              <Method Name="Read" Environment="ADO.NET" EmptyInputArray="0" Action="Include"/>
+            </Class>
+            <Class Name="OracleClob" Environment="ADO.NET" Action="Include">
+              <Method Name="Read" Environment="ADO.NET" EmptyInputArray="0" Action="Include"/>
+            </Class>
+            <Class Name="OracleRefCursor" Environment="ADO.NET" Action="Include"/>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+      <Namespace Name="Sybase" Environment="ADO.NET" Action="Exclude">
+        <Namespace Name="Data" Environment="ADO.NET" Action="Exclude">
+          <Namespace Name="AseClient" Environment="ADO.NET" Action="Default">
+            <Class Name="AseCommand" Environment="ADO.NET" Action="Default">
+              <Method Name="ExecuteXmlReader" Environment="ADO.NET" Action="Include"/>
+              <Method Name="ResetCommandTimeout" Environment="ADO.NET" Action="Include"/>
+              <Method Name="SetNamedParameters" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="AseCommandBuilder" Environment="ADO.NET" Action="Include"/>
+            <Class Name="AseConnection" Environment="ADO.NET" Action="Include">
+              <Method Name="EnlistDistributedTransaction" Environment="ADO.NET" Action="Include"/>
+              <Method Name="set_NamedParameters" Environment="ADO.NET" Action="Include"/>
+              <Method Name="add_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_StateChange" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_InfoMessage" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_StateChange" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="AseDataAdapter" Environment="ADO.NET" Action="Default">
+              <Method Name="add_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="add_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdated" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="remove_RowUpdating" Environment="ADO.NET" Action="Exclude"/>
+            </Class>
+            <Class Name="AseDataReader" Environment="ADO.NET" Action="Default">
+              <Method Name="GetList" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetTimeSpan" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetUInt16" Environment="ADO.NET" Action="Include"/>
+              <Method Name="GetUInt32" Environment="ADO.NET" Action="Include"/>
+            </Class>
+            <Class Name="AseParameter" Environment="ADO.NET" Action="Default">
+              <Method Name="ToString" Environment="ADO.NET" Action="Exclude"/>
+              <Method Name="set_AseDbType" Environment="ADO.NET" Action="Include"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+    </Filter>
+  </Configuration>
+</FilterConfigurations>

@@ -1,0 +1,24 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+开始自动日志消息堆栈 – 迭代 3。	[MsgId: MMSG-10545]
+正在开始操作 Action。	[MsgId: MMSG-15919]
+Action.cs(23): 集合 send_message	[MsgId: MMSG-17988]
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);	[MsgId: MMSG0]
+Action.cs(31): Event 40: MySqlConnection_3.Open();	[MsgId: MMSG0]
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");	[MsgId: MMSG0]
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();	[MsgId: MMSG0]
+Action.cs(44): 通知: 事务 "send_message" 已启动。	[MsgId: MMSG-16999]
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);	[MsgId: MMSG0]
+Action.cs(52): Event 111: MySqlConnection_3.Open();	[MsgId: MMSG0]
+错误: Action.cs(53): MySql.Data.MySqlClient.MySqlException (0x80004005): Too many connections
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.Open()
+   在 MySql.Data.MySqlClient.Driver.Open()
+   在 MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   在 MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   在 MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 53
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+

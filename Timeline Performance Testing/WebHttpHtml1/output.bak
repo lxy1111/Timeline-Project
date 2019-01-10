@@ -1,0 +1,451 @@
+虚拟用户脚本启动时间: 2019/1/4 23:27:58
+正在开始操作 vuser_init。
+LoadRunner 12.55.0 (Windows 10) 的 Web Turbo 回放；内部版本 911 (7月 24 2017 19:46:00)  	[MsgId: MMSG-26983]
+运行模式: HTML  	[MsgId: MMSG-26993]
+回放用户代理: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko  	[MsgId: MMSG-26988]
+运行时设置文件: "C:\Users\xsk\Documents\VuGen\Scripts\WebHttpHtml1\\default.cfg"  	[MsgId: MMSG-27141]
+vuser_init.c(12): web_url("localhost:8100") 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/__ion-dev-server/ion-dev.css?v=3.1.11”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/__ion-dev-server/ion-dev.js?v=3.1.11”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/cordova.js”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/build/main.css”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/build/polyfills.js”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/build/vendor.js”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:8100/build/main.js”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 在 HTML“http://localhost:8100/”中找到资源“http://localhost:35729/livereload.js?snipver=1”  	[MsgId: MMSG-26659]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/fonts/roboto-light.woff”(由参数编号 9 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/fonts/roboto-medium.woff”(由参数编号 11 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/15.jpg”(由参数编号 13 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/5.jpg”(由参数编号 15 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/7.jpg”(由参数编号 17 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/4.jpg”(由参数编号 19 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/6.jpg”(由参数编号 21 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/8.jpg”(由参数编号 23 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/9.jpg”(由参数编号 25 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/fonts/ionicons.woff?v=3.0.0-alpha.3”(由参数编号 27 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): 正在下载资源“http://localhost:8100/assets/imgs/10.jpg”(由参数编号 29 指定)  	[MsgId: MMSG-26577]
+vuser_init.c(12): web_url("localhost:8100") 已成功，7027278 个正文字节，5562 个标头字节，13 个分块开销字节  	[MsgId: MMSG-26385]
+vuser_init.c(33): web_websocket_connect 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(33): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(33): web_websocket_connect 已成功，0 个正文字节，129 个标头字节  	[MsgId: MMSG-26386]
+vuser_init.c(42): web_websocket_connect 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(42): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(42): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(42): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(42): web_websocket_connect 已成功，0 个正文字节，129 个标头字节  	[MsgId: MMSG-26386]
+vuser_init.c(51): web_websocket_send 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(51): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(51): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(51): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(51): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(51): web_websocket_send 已成功  	[MsgId: MMSG-26392]
+vuser_init.c(58): web_websocket_send 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(58): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(58): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(58): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(58): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(58): web_websocket_send 已成功  	[MsgId: MMSG-26392]
+vuser_init.c(63): 通知: 事务 "login" 已启动。
+vuser_init.c(65): web_remove_auto_header("Sec-WebSocket-Version") 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(65): 警告 -26590: “Sec-WebSocket-Version”的 web_remove/revert_auto_header 不起作用  	[MsgId: MWAR-26590]
+vuser_init.c(65): web_remove/revert_auto_header("Sec-WebSocket-Version") 最高严重级别为“warning”  	[MsgId: MMSG-26391]
+vuser_init.c(67): web_custom_request("login") 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(67): web_custom_request("login") 已成功，107 个正文字节，128 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+vuser_init.c(78): web_custom_request("newsList") 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(78): web_custom_request("newsList") 已成功，370 个正文字节，128 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+vuser_init.c(89): web_set_sockets_option 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(89): web_set_sockets_option 已成功  	[MsgId: MMSG-26392]
+vuser_init.c(91): 通知: 事务"login"以"Pass"状态结束 (持续时间: 0.1308 浪费时间: 0.0439)。
+正在结束操作 vuser_init。
+正在运行 Vuser...
+正在开始迭代 1。
+警告 -27077: “每次迭代模拟一个新用户”运行时设置为“开”时，“vuser_init”节将包含 Web 函数。这可能会产生具有多次迭代的不可预测结果  	[MsgId: MWAR-27077]
+警告 -27268: 在 vuser_init 部分的末尾检测到挂起的 Web 请求并将中止该请求  	[MsgId: MWAR-27268]
+正在关闭 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27635]
+正在关闭 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27635]
+每个服务器的最大并发连接数: 6  	[MsgId: MMSG-26989]
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，368 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.1999 浪费时间: 0.0590)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，368 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0805 浪费时间: 0.0273)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，737 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.1166 浪费时间: 0.0237)。
+正在结束操作 Action。
+正在结束迭代 1。
+正在开始迭代 2。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，366 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.2001 浪费时间: 0.0556)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，366 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0761 浪费时间: 0.0277)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，735 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0530 浪费时间: 0.0283)。
+正在结束操作 Action。
+正在结束迭代 2。
+正在开始迭代 3。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.1774 浪费时间: 0.0652)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0739 浪费时间: 0.0303)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，733 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0562 浪费时间: 0.0316)。
+正在结束操作 Action。
+正在结束迭代 3。
+正在开始迭代 4。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.1560 浪费时间: 0.0674)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0978 浪费时间: 0.0334)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，731 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0650 浪费时间: 0.0419)。
+正在结束操作 Action。
+正在结束迭代 4。
+正在开始迭代 5。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.1952 浪费时间: 0.0838)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0889 浪费时间: 0.0389)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，729 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0671 浪费时间: 0.0425)。
+正在结束操作 Action。
+正在结束迭代 5。
+正在开始迭代 6。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.2042 浪费时间: 0.0911)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0867 浪费时间: 0.0412)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，727 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0778 浪费时间: 0.0527)。
+正在结束操作 Action。
+正在结束迭代 6。
+正在开始迭代 7。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.1948 浪费时间: 0.0996)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0996 浪费时间: 0.0464)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，727 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0802 浪费时间: 0.0494)。
+正在结束操作 Action。
+正在结束迭代 7。
+正在开始迭代 8。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.2080 浪费时间: 0.1092)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.1009 浪费时间: 0.0562)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，727 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0855 浪费时间: 0.0597)。
+正在结束操作 Action。
+正在结束迭代 8。
+正在开始迭代 9。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.2404 浪费时间: 0.1284)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，364 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.1016 浪费时间: 0.0529)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，727 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0775 浪费时间: 0.0543)。
+正在结束操作 Action。
+正在结束迭代 9。
+正在开始迭代 10。
+正在开始操作 Action。
+Action.c(4): 集合 send_message
+Action.c(6): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(6): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(8): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(8): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(10): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(10): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(12): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(12): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(14): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(14): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(16): web_add_cookie 已启动  	[MsgId: MMSG-26355]
+Action.c(16): web_add_cookie 已成功  	[MsgId: MMSG-26392]
+Action.c(18): web_add_header("UA-CPU") 已启动  	[MsgId: MMSG-26355]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): web_custom_request("newsList_2") 已成功，367 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(57): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.2111 浪费时间: 0.1159)。
+Action.c(59): 通知: 事务 "refresh_message" 已启动。
+Action.c(61): web_custom_request("newsList_3") 已启动  	[MsgId: MMSG-26355]
+Action.c(61): web_custom_request("newsList_3") 已成功，367 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(72): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.1154 浪费时间: 0.0599)。
+Action.c(74): 通知: 事务 "more_message" 已启动。
+Action.c(76): web_custom_request("moreNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(76): web_custom_request("moreNews") 已成功，730 个正文字节，249 个标头字节，12 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(87): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0882 浪费时间: 0.0599)。
+正在结束操作 Action。
+正在结束迭代 10。
+正在结束 Vuser...
+正在开始操作 vuser_end。
+正在结束操作 vuser_end。
+Vuser 已终止。

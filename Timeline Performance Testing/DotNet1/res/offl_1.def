@@ -1,0 +1,34 @@
+;[Graph definition]
+[Graph definition]
+;count=0
+count=1
+;GraphTitle=
+GraphTitle=Pages/sec (Memory)
+;DataPointLabel_1=
+DataPointLabel_1=offline_datapoint_1
+;LineTitle_1=
+LineTitle_1=localhost
+;LineGroup_1=
+LineGroup_1=0
+;YAxisTitle=
+YAxisTitle=Pages/sec (Memory)
+;GraphGroupMenuTitle=Resource Monitoring
+GraphGroupMenuTitle=Windows 资源
+;XAxisTitle=Elapsed Scenario Time (seconds)
+XAxisTitle=已用场景时间 (秒)
+;XAxisIsElapsedTime=TRUE
+XAxisIsElapsedTime=TRUE
+;LineType=NOSTEP
+LineType=NOSTEP
+;BuildUnderLoadGraph=TRUE
+BuildUnderLoadGraph=TRUE
+;AggregateFunction=AVG
+AggregateFunction=AVG
+;MissingData=PREVIOUS
+MissingData=PREVIOUS
+;GranularityMode=NOTINCLUDEZERO
+GranularityMode=NOTINCLUDEZERO
+;NoDataBehavior=RemoveGraph
+NoDataBehavior=RemoveGraph
+GraphType=es_rm_svr_res_nt
+DataPointDescr_1=Pages/sec 是指为解决硬页错误从磁盘读取或写入磁盘的速度。这个计数器是可以显示导致系统范围延缓类型错误的主要指示器。它是 Memory\\Pages Input/sec 和 Memory\\Pages Output/sec 的总和。是用页数计算的，以便在不用做转换的情况下就可以同其他页计数如: Memory\\Page Faults/sec 做比较，这个值包括为满足错误而在文件系统缓存(通常由应用程序请求)的非缓存映射内存文件中检索的页。

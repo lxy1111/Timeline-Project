@@ -1,0 +1,34 @@
+;[Graph definition]
+[Graph definition]
+;count=0
+count=1
+;GraphTitle=
+GraphTitle=Processor Queue Length (System)
+;DataPointLabel_1=
+DataPointLabel_1=offline_datapoint_3
+;LineTitle_1=
+LineTitle_1=localhost
+;LineGroup_1=
+LineGroup_1=0
+;YAxisTitle=
+YAxisTitle=Processor Queue Length (System)
+;GraphGroupMenuTitle=Resource Monitoring
+GraphGroupMenuTitle=Windows 资源
+;XAxisTitle=Elapsed Scenario Time (seconds)
+XAxisTitle=已用场景时间 (秒)
+;XAxisIsElapsedTime=TRUE
+XAxisIsElapsedTime=TRUE
+;LineType=NOSTEP
+LineType=NOSTEP
+;BuildUnderLoadGraph=TRUE
+BuildUnderLoadGraph=TRUE
+;AggregateFunction=AVG
+AggregateFunction=AVG
+;MissingData=PREVIOUS
+MissingData=PREVIOUS
+;GranularityMode=NOTINCLUDEZERO
+GranularityMode=NOTINCLUDEZERO
+;NoDataBehavior=RemoveGraph
+NoDataBehavior=RemoveGraph
+GraphType=es_rm_svr_res_nt
+DataPointDescr_1=Processor Queue Length 是处理器队列的线程数量。与磁盘计数器不同，此计数器只显示就绪线程，而不是正在运行的线程。即使运行多处理器的计算机只有一个处理器队列。因此，如果一台计算机有几个处理器，你需要将此值除以处理工作量的处理器数量。每个处理器，不管工作量大小，如果保持 10 个以下线程的处理器队列，通常是可以接受的。

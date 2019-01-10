@@ -1,0 +1,17 @@
+[t3]
+FileName1=t3_livereload.html
+URL1=http://localhost:35729/livereload
+Total=4
+ContentType=application/font-woff
+SnapshotXmlFile=snapshot_3.xml
+RequestHeaderFile=t3_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t3_ResponseHeader.txt
+FileName2=t3_roboto-light.html
+URL2=http://localhost:8100/assets/fonts/roboto-light.woff
+FileName3=t3_roboto-medium.html
+URL3=http://localhost:8100/assets/fonts/roboto-medium.woff
+FileName4=t3_15.jpg
+URL4=http://localhost:8100/assets/imgs/15.jpg
+[ProtocolInfo]
+ProtocolId=QTWeb

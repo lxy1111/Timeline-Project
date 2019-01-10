@@ -1,0 +1,22 @@
+﻿<ReaderValues dsId="4001" correlationTemplate="		lr.save_string(&quot;{3}&quot;, valueTable_1.Rows[{1}][&quot;{2}&quot;].ToString());">
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="values" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="values">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="username_0" type="xs:string" minOccurs="0" />
+                <xs:element name="password_1" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <values>
+    <username_0>test</username_0>
+    <password_1>test</password_1>
+  </values>
+</ReaderValues>

@@ -1,0 +1,1964 @@
+
+CreateFilterDataServices - Start, using ctorEnvironments
+
+ ******************** FilterDataMgr - filter file dump ******************** 
+<FilterConfigurations Version="9.0.0.647">
+  <Configuration Name="Recorder">
+    <Environments>
+      <Environment Name="ADO.NET"/>
+      <Environment Name=".NET Remoting"/>
+      <Environment Name="Enterprise Services"/>
+      <Environment Name="WCF"/>
+    </Environments>
+    <Assemblies>
+      <Assembly Name="mscorlib" Action="Include"  Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET"/>
+      <Assembly Name="system"  StrongName="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment="WCF"/>
+      <Assembly Name="system.data"  StrongName="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment="ADO.NET"/>
+      <Assembly Name="system.data.sqlserverce"  StrongName="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Action="Include"  Environment="ADO.NET" />
+      <Assembly Name="system.data.oracleclient"  StrongName="System.Data.OracleClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment="ADO.NET"/>
+      <Assembly Name="oracle.dataaccess"  StrongName="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" Action="Include"  Environment="ADO.NET" IsOptionalLoadedAssembly="True"/>
+      <Assembly Name="sybase.data.aseclient"  StrongName="Sybase.Data.AseClient, Version=1.1.475.0, Culture=neutral, PublicKeyToken=26e0f1529304f4a7" Action="Include"  Environment="ADO.NET" IsOptionalLoadedAssembly="True" />
+      <Assembly Name="system.runtime.remoting"  StrongName="System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment=".NET Remoting"/>
+      <Assembly Name="system.enterpriseServices"  StrongName="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Action="Include"  Environment="Enterprise Services"/>
+      <Assembly Name="system.transactions" StrongName="System.Transactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"/>
+      <Assembly Name="system.servicemodel"  StrongName="System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment="WCF"/>
+      <Assembly Name="system.runtime.serialization"  StrongName="System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Action="Include"  Environment="WCF"/>
+    </Assemblies>
+    <Filter>
+      <Namespace  Name="System" Action="Default">
+        <Class  Name="AppDomain" Action="Exclude"/>
+        <Class Name="Activator" Action="Exclude"  Environment=".NET Remoting,Enterprise Services">
+          <Method Name="GetObject" Action="Include"  Environment=".NET Remoting"/>
+          <Method Name="CreateInstance" Action="Include"  Environment=".NET Remoting,Enterprise Services"/>
+          <Method Name="CreateInstance`1" Action="Include"  Environment=".NET Remoting,Enterprise Services"/>
+        </Class>
+        <Namespace Name="Collections" Action="Default"  Environment="WCF">
+          <Namespace Name="ObjectModel" Action="Default"  Environment="WCF">
+            <Class  Name="Collection`1" Action="Include" KnownInstance="True" Environment="WCF"/>
+          </Namespace>
+          <Namespace  Name="Generic" Action="Default">
+            <Class  Name="List`1" Action="Default">
+              <Class Name="Enumerator" Action="Include" KnownInstance="True"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace  Name="Net" Action="Default">
+          <Class  Name="NetworkCredential" Action="Include"/>
+          <Class Name="LazyAsyncResult" Action="Default"  Environment="WCF">
+            <Method Name="InvokeCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+          </Class>
+          <Class Name="BufferAsyncResult" Action="Default"  Environment="WCF">
+            <Method Name="InvokeCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+          </Class>
+          <Class Name="ListenerAsyncResult" Action="Default"  Environment="WCF">
+            <Method Name="InvokeCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+          </Class>
+          <Namespace  Name="Sockets" Action="Default">
+            <Class Name="OverlappedAsyncResult" Action="Default"  Environment="WCF">
+              <Method Name="InvokeCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace  Name="Threading" Action="Default">
+          <Namespace Action="Default" Name="Tasks">
+            <Class Name="Task" Action="Default" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+              <Method Name="GetAwaiter()" Action="Include" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" />
+            </Class>
+            <Class Name="Task`1" Action="Default" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+              <Method Name="GetAwaiter()" Action="Include" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET" />
+            </Class>
+          </Namespace>
+          <Class  Name="WaitHandle" Action="Default">
+            <Method Name="Close" KnownInstance="True" Action="Include"/>
+            <Method Name="SignalAndWait" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitAll" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitAny" KnownArgIndex="-1" Action="Include"/>
+            <Method Name="WaitOne" KnownInstance="True" Action="Include"/>
+          </Class>
+          <Class  Name="Mutex" Action="Exclude"/>
+          <Class  Name="Semaphore" Action="Exclude"/>
+        </Namespace>
+        <Namespace Name="Xml" Action="Exclude"  Environment="ADO.NET,WCF">
+          <Class Name="XmlDataDocument" Action="Default"  Environment="ADO.NET">
+            <Method Name=".ctor" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Load" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Save" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_DataSet" Action="Include"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="XmlDictionaryReaderQuotas" KnownInstance="True" Action="Include" Environment="WCF">
+            <Method Name="get_MaxArrayLength" Action="Exclude"  Environment="WCF"/>
+            <Method Name="get_MaxBytesPerRead" Action="Exclude"  Environment="WCF"/>
+            <Method Name="get_MaxDepth" Action="Exclude"  Environment="WCF"/>
+            <Method Name="get_MaxNameTableCharCount" Action="Exclude"  Environment="WCF"/>
+            <Method Name="get_MaxStringContentLength" Action="Exclude"  Environment="WCF"/>
+          </Class>
+        </Namespace>
+        <Namespace Name="Data" Action="Exclude"  Environment="ADO.NET">
+          <Namespace Name="Common" Action="Default"  Environment="ADO.NET">
+            <Class Name="DataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetFillLoadOption" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ShouldSerializeAcceptChangesDuringFill" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="ShouldSerializeFillLoadOption" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="ShouldSerializeTableMappings" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_AcceptChangesDuringFill" Action="TotallyExclude"  Environment="ADO.NET"/>
+              <Method Name="get_AcceptChangesDuringUpdate" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_ContinueUpdateOnError" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_Container" Action="TotallyExclude"  Environment="ADO.NET"/>
+              <Method Name="get_FillLoadOption" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_ReturnProviderSpecificTypes" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_UpdateBatchSize" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_Site" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_AcceptChangesDuringFill" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_AcceptChangesDuringUpdate" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_ContinueUpdateOnError" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_FillLoadOption" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_ReturnProviderSpecificTypes" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_UpdateBatchSize" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="add_FillError" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_FillError" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DataColumnMapping" Action="Include"  Environment="ADO.NET">
+              <Method Name="get_DataSetColumn" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_SourceColumn" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DataTableMapping" Action="Include"  Environment="ADO.NET">
+              <Method Name="get_DataSetTable" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_SourceTable" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DbCommand" Action="Default"  Environment="ADO.NET">
+              <Method Name="get_DesignTimeVisible" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DbCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="DbConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="EnlistTransaction" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSchema" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_ServerVersion" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_DataSource" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DbDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetEnumerator" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="GetProviderSpecificFieldType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="GetProviderSpecificValue" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetProviderSpecificValues" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="get_HasRows" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_VisibleFieldCount" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)" Action="Include" EmptyInputArray="2" Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DbParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetDbType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="get_SourceColumnNullMapping" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_SourceColumnNullMapping" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="DbTransaction" Action="Default"  Environment="ADO.NET">
+              <Method Name="Dispose" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="SqlClient" Action="Default"  Environment="ADO.NET">
+            <Class Name="SqlCommand" Action="Default"  Environment="ADO.NET">
+              <Method Name="get_Notification" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_NotificationAutoEnlist" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="SqlCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="SqlConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="get_FireInfoMessageEventOnUserErrors" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_PacketSize" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_StatisticsEnabled" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_WorkstationId" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="SqlDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="SqlDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetSqlBinary" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlBoolean" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlByte" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlBytes" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlChars" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlDateTime" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlDecimal" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlDouble" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlGuid" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlInt16" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlInt32" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlInt64" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlMoney" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlSingle" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlString" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlValue" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetSqlXml" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="SqlParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetSqlDbType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_CompareInfo" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_LocaleId" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_Offset" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_SqlDbType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_SqlValue" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_UdtTypeName" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_XmlSchemaCollectionDatabase" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_XmlSchemaCollectionName" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_XmlSchemaCollectionOwningSchema" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_CompareInfo" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_LocaleId" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_Offset" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_SqlDbType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_SqlValue" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_UdtTypeName" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_XmlSchemaCollectionDatabase" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_XmlSchemaCollectionName" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_XmlSchemaCollectionOwningSchema" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="SqlStream" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Class Name="SqlTransaction" Action="Default"  Environment="ADO.NET">
+              <Method Name="Save" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Odbc" Action="Default"  Environment="ADO.NET">
+            <Class Name="OdbcCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="OdbcConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="get_Driver" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OdbcDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OdbcDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetDate" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetTime" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OdbcParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetOdbcType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_OdbcType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_OdbcType" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="OleDb" Action="Default"  Environment="ADO.NET">
+            <Class Name="OleDbCommandBuilder" Action="Include"  Environment="ADO.NET">
+            </Class>
+            <Class Name="OleDbConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="get_Provider" Action="TotallyExclude"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OleDbDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OleDbDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetTimeSpan" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OleDbParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetOleDbType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_OleDbType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_OleDbType" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="OracleClient" Action="Default"  Environment="ADO.NET">
+            <Class Name="OracleCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="OracleDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetOracleBFile" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleBinary" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleDateTime" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleLob" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleMonthSpan" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleNumber" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleString" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleTimeSpan" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleValue" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleValues" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetTimeSpan" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetOracleType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_OracleType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_OracleType" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleCommand" Action="Default"  Environment="ADO.NET">
+              <Method Name="ExecuteReader" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="CreateCommand" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleLob" Action="Include"  Environment="ADO.NET">
+              <Method Name="Read" Action="Include" EmptyInputArray="0" Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleBFile" Action="Include"  Environment="ADO.NET">
+              <Method Name="Read" Action="Include" EmptyInputArray="0" Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Interface Name="IDbCommand" Action="Include"  Environment="ADO.NET">
+            <Method Name="Cancel" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="CreateParameter" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="ExecuteNonQuery" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="ExecuteReader" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="ExecuteScalar" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Prepare" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Connection" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_Parameters" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_CommandText" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_CommandTimeout" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_CommandType" Action="Exlude"  Environment="ADO.NET"/>
+            <Method Name="get_Transaction" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_UpdatedRowSource" Action="Exclude"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDbConnection" Action="Include"  Environment="ADO.NET">
+            <Method Name="BeginTransaction" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="ChangeDatabase" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Close" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="CreateCommand" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Open" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_ConnectionString" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ConnectionTimeout" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Database" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_State" Action="Exclude"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDataReader" Action="Default"  Environment="ADO.NET">
+            <Method Name="Close" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetSchemaTable" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="NextResult" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Read" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Depth" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsClosed" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_RecordsAffected" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDataRecord" Action="Include"  Environment="ADO.NET">
+            <Method Name="GetBoolean" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetByte" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetBytes" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetChar" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetChars" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetDateTime" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetDecimal" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetDouble" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetFloat" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetGuid" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetInt16" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetInt32" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetInt64" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetString" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetValue" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetValues" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetData" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetDataTypeName" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="GetFieldType" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="GetName" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="GetOrdinal" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="IsDBNull" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_FieldCount" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Item" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDbDataAdapter" Action="Default"  Environment="ADO.NET">
+            <Method Name="get_DeleteCommand" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_InsertCommand" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_SelectCommand" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_UpdateCommand" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="set_DeleteCommand" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_InsertCommand" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_SelectCommand" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_UpdateCommand" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDbDataParameter" Action="Default"  Environment="ADO.NET">
+            <Method Name="get_Precision" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Scale" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Size" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="set_Precision" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Scale" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Size" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDbTransaction" Action="Include"  Environment="ADO.NET">
+            <Method Name="Commit" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Rollback" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Connection" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_IsolationLevel" Action="Exclude"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDataAdapter" Action="Include"  Environment="ADO.NET">
+            <Method Name="Fill" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="FillSchema" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetFillParameters" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="Update" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_MissingMappingAction" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_MissingSchemaAction" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_TableMappings" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="ITableMappingCollection" Action="Include"  Environment="ADO.NET">
+            <Method Name="Add" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="RemoveAt" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="GetByDataSetTable" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IColumnMappingCollection" Action="Include"  Environment="ADO.NET">
+          </Interface>
+          <Interface Name="IDataParameter" Action="Include"  Environment="ADO.NET">
+            <Method Name="get_DbType" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Direction" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsNullable" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ParameterName" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_SourceColumn" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_SourceVersion" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Value" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_DbType" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Direction" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_ParameterName" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_SourceColumn" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_SourceVersion" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Value" Action="Include"  Environment="ADO.NET"/>
+          </Interface>
+          <Interface Name="IDataParameterCollection" Action="Include"  Environment="ADO.NET">
+            <Method Name="get_Count" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsFixedSize" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsReadOnly" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsSynchronized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_SyncRoot" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Contains" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="IndexOf" Action="TotallyExclude"  Environment="ADO.NET"/>
+          </Interface>
+          <Class Name="DataColumn" Action="Include"  Environment="ADO.NET">
+            <Method Name="get_AllowDBNull" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_AutoIncrement" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_AutoIncrementSeed" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_AutoIncrementStep" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Caption" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ColumnMapping" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ColumnName" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_DataType" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_DateTimeMode" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_DesignMode" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Expression" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ExtendedProperties" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_MaxLength" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Namespace" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Ordinal" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Prefix" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ReadOnly" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Table" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Unique" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="SetOrdinal" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="DataRelation" Action="Include"  Environment="ADO.NET">
+            <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ChildColumns" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ChildKeyConstraint" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ChildTable" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DataSet" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ExtendedProperties" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Nested" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ParentColumns" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ParentKeyConstraint" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ParentTable" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_RelationName" Action="TotallyExclude"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="Constraint" Action="Include"  Environment="ADO.NET">
+            <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ConstraintName" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ExtendedProperties" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Table" Action="TotallyExclude"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="DataSet" Action="Include"  Environment="ADO.NET">
+            <Method Name="System.ComponentModel.IListSource.GetList" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_CaseSensitive" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DataSetName" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DefaultViewManager" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_EnforceConstraints" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ExtendedProperties" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_HasErrors" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsInitialized" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Locale" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Namespace" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Prefix" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Relations" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_RemotingFormat" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_SchemaSerializationMode" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_Site" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Tables" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="GetObjectData" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="WriteXml" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="WriteXmlSchema" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="set_CaseSensitive" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_DataSetName" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_EnforceConstraints" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Locale" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Namespace" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_Site" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_RemotingFormat" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="set_SchemaSerializationMode" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="add_Initialized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_MergeFailed" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_Initialized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_MergeFailed" Action="Exclude"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="DataTable" Action="Include"  Environment="ADO.NET">
+            <Method Name="get_Count" Action="Include" RecordOnce="True" Environment="ADO.NET"/>
+            <Method Name="get_Item" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="System.ComponentModel.IListSource.GetList" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_CaseSensitive" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ChildRelations" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Columns" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Constraints" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Container" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DataSet" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DefaultView" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DesignMode" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_DisplayExpression" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_HasErrors" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsInitialized" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Locale" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_MinimumCapacity" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Namespace" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_ParentRelations" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Prefix" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_PrimaryKey" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Rows" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Site" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_TableName" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="GetObjectData" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnColumnChanged" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnColumnChanging" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnRowChanged" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnRowChanging" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnRowDeleted" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnRowDeleting" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnTableCleared" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnTableClearing" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="OnTableNewRow" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="WriteXml" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="WriteXmlSchema" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="add_ColumnChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_ColumnChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_Initialized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_RowChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_RowChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_RowDeleted" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_RowDeleting" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_TableCleared" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_TableClearing" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_TableNewRow" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_ColumnChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_ColumnChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_Initialized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_RowChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_RowChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_RowDeleted" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_RowDeleting" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_TableCleared" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_TableClearing" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_TableNewRow" Action="Exclude"  Environment="ADO.NET"/>
+            <!--Method Name="get_ExtendedProperties" Action="Include" Environment="ADO.NET"/-->
+            <!--Method Name="get_RemotingFormat" Action="Include" Environment="ADO.NET"/-->
+          </Class>
+          <Class Name="DataRow" Action="Include"  Environment="ADO.NET">
+            <ConstraintSet Action="Exclude" Order="1">
+              <PropertyConstraint PropertyMethod="get"/>
+            </ConstraintSet>
+            <Method Name="GetColumnError" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="HasVersion" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="IsNull" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="BeginEdit" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="CancelEdit" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="EndEdit" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="get_HasErrors" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Item" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_ItemArray" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_RowError" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_RowState" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_Table" Action="TotallyExclude"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="InternalDataCollectionBase" Action="Include"  Environment="ADO.NET">
+            <Method Name="get_Item" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="IndexOf" Action="TotallyExclude"  Environment="ADO.NET"/>
+            <Method Name="get_Count" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsReadOnly" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_IsSynchronized" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="get_SyncRoot" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="add_CollectionChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_CollectionChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="add_CollectionChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="remove_CollectionChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="OnCollectionChanged" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="OnCollectionChanging" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="Contains" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="GetEnumerator" Action="Exclude"  Environment="ADO.NET"/>
+            <Method Name="Insert" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="InsertAt" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Add" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Remove" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="RemoveAt" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="AddRange" Action="Include"  Environment="ADO.NET"/>
+            <Method Name="Clear" Action="Include"  Environment="ADO.NET"/>
+          </Class>
+          <Class Name="DataTableMapping" Action="Include"  Environment="ADO.NET"/>
+          <Class Name="DataColumnMapping" Action="Include"  Environment="ADO.NET"/>
+        </Namespace>
+        <!-- Configuration for Remoting -->
+        <Namespace Name="Runtime" Action="Exclude"  Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+          <Namespace Action="Default" Name="CompilerServices" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+            <Class Name="TaskAwaiter`1" Action="Default" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+              <Method Name="GetResult()" Action="Include" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET"/>
+            </Class>
+            <Class Name="TaskAwaiter" Action="Default" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET">
+              <Method Name="GetResult()" Action="Include" Environment=".NET Remoting,Enterprise Services,WCF,ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Remoting" Action="Exclude"  Environment=".NET Remoting">
+            <Namespace Name="Activation" Action="Exclude"  Environment=".NET Remoting">
+              <Class Name="UrlAttribute" Action="Exclude"  Environment=".NET Remoting">
+                <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Messaging" Action="Exclude"  Environment=".NET Remoting">
+              <Class Name="AsyncResult" Action="Exclude"  Environment=".NET Remoting">
+                <Method Name="SyncProcessMessage" Action="TotallyExclude" Context="AsyncCallback" EnableHook="True" Environment=".NET Remoting"/>
+                <Method  Name="get_AsyncWaitHandle" Action="Include" KnownInstance="True" Environment=".NET Remoting"/>
+                <Method  Name="get_AsyncState" Action="Include" KnownInstance="True" Environment=".NET Remoting"/>
+              </Class>
+              <Class Name="ServerContextTerminatorSink" Action="Exclude"  Environment=".NET Remoting">
+                <Method Name="AsyncProcessMessage" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="SyncProcessMessage" Action="TotallyExclude"  Environment=".NET Remoting"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Services" Action="Default"  Environment=".NET Remoting">
+              <Class Name="RemotingClientProxy" Action="Include"  Environment=".NET Remoting"/>
+            </Namespace>
+            <Namespace Name="Channels" Action="Exclude"  Environment=".NET Remoting">
+              <Namespace Name="Http" Action="Exclude"  Environment=".NET Remoting">
+                <Class Name="HttpChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                </Class>
+                <Class Name="HttpClientChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                </Class>
+              </Namespace>
+              <Namespace Name="Ipc" Action="Exclude"  Environment=".NET Remoting">
+                <Class Name="IpcChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                </Class>
+                <Class Name="IpcClientChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                </Class>
+              </Namespace>
+              <Namespace Name="Tcp" Action="Exclude"  Environment=".NET Remoting">
+                <Class Name="TcpChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                </Class>
+                <Class Name="TcpClientChannel" Action="Exclude"  Environment=".NET Remoting">
+                  <Method Name=".ctor" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="set_IsSecured" Action="Include"  Environment=".NET Remoting"/>
+                  <Method Name="CreateMessageSink(System.String,System.Object,System.String&amp;)" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                </Class>
+              </Namespace>
+              <Class Name="ChannelServices" Action="Exclude"  Environment=".NET Remoting">
+                <Method Name="RegisterChannel" Action="Include"  Environment=".NET Remoting"/>
+              </Class>
+              <Interface Name="IClientChannelSinkProvider" Action="Include"  Environment=".NET Remoting"/>
+              <Class Name="BinaryServerFormatterSinkProvider" Action="Default"  Environment=".NET Remoting">
+                <Method Action="Include" Name=".ctor" Environment=".NET Remoting"/>
+              </Class>
+            </Namespace>
+            <Namespace Name="Proxies" Action="Exclude"  Environment=".NET Remoting">
+              <Class Name="RemotingProxy" Action="Exclude"  Environment=".NET Remoting">
+                <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Action="Include"  Environment=".NET Remoting"/>
+              </Class>
+              <Class Name="RealProxy" Action="Exclude"  Environment=".NET Remoting">
+              </Class>
+            </Namespace>
+            <Namespace Name="Lifetime" Action="Default"  Environment=".NET Remoting">
+              <Interface Name="ILease" Action="Include"  Environment=".NET Remoting">
+                <Method Name="Renew" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="get_CurrentLeaseTime" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="get_CurrentState" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="get_InitialLeaseTime" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="get_RenewOnCallTime" Action="TotallyExclude"  Environment=".NET Remoting"/>
+                <Method Name="get_SponsorshipTimeout" Action="TotallyExclude"  Environment=".NET Remoting"/>
+              </Interface>
+              <Interface Name="ISponsor" Action="Include"  Environment=".NET Remoting">
+                <Method Name="Renewal" Action="TotallyExclude"  Environment=".NET Remoting"/>
+              </Interface>
+            </Namespace>
+            <Class Name="RemotingConfiguration" Action="Include"  Environment=".NET Remoting">
+              <Method Name="CustomErrorsEnabled(System.Boolean)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="IsActivationAllowed(System.Type)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="IsRemotelyActivatedClientType(System.String,System.String)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="IsRemotelyActivatedClientType(System.Type)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="IsWellKnownClientType(System.String,System.String)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="IsWellKnownClientType(System.Type)" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ApplicationName" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ApplicationId()" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_CustomErrorsMode()" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ProcessId()" Action="Exclude"  Environment=".NET Remoting"/>
+            </Class>
+            <Class Name="RemotingServices" Action="Exclude"  Environment=".NET Remoting">
+              <Method Name="Connect" Action="Include"  Environment=".NET Remoting"/>
+              <Method Name="Disconnect" Action="Include"  Environment=".NET Remoting"/>
+              <Method Name="GetLifetimeService" Action="Include"  Environment=".NET Remoting"/>
+            </Class>
+            <Class Name="ObjectHandle" Action="Include"  Environment=".NET Remoting">
+            </Class>
+            <Class Name="WellKnownClientTypeEntry" Action="Include"  Environment=".NET Remoting">
+              <Method Name="get_ApplicationUrl" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ObjectType" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ObjectUrl" Action="Exclude"  Environment=".NET Remoting"/>
+            </Class>
+            <Class Name="ActivatedClientTypeEntry" Action="Include"  Environment=".NET Remoting">
+              <Method Name="get_ApplicationUrl" Action="Exclude"  Environment=".NET Remoting"/>
+              <Method Name="get_ObjectType" Action="Exclude"  Environment=".NET Remoting"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+        <Namespace  Name="Transactions" Action="Default">
+          <!--Class Name="Transaction" Action="Include"/-->
+          <Class  Name="TransactionScope" Action="Include"/>
+        </Namespace>
+        <Namespace Name="EnterpriseServices" Action="Default"  Environment="Enterprise Services">
+          <Class Name="RemoteServicedComponentProxy" Action="Exclude"  Environment="Enterprise Services">
+            <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Action="Include"  Environment="Enterprise Services"/>
+            <Method  Name="Dispose(System.Boolean)" Action="Include" KnownInstance="True" Environment="Enterprise Services"/>
+          </Class>
+          <Class Name="ServicedComponentProxy" Action="Exclude"  Environment="Enterprise Services">
+            <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Action="Include"  Environment="Enterprise Services"/>
+            <Method  Name="Dispose(System.Boolean)" Action="Include" KnownInstance="True" Environment="Enterprise Services"/>
+          </Class>
+        </Namespace>
+        <Namespace Name="ServiceModel" Action="Default"  Environment="WCF">
+          <Class Name="ClientBase`1" Action="Include"  Environment="WCF"/>
+          <Class Name="DuplexClientBase`1" Action="Include"  Environment="WCF">
+            <Method Name="get_InnerDuplexChannel" Action="Exclude"  Environment="WCF"/>
+          </Class>
+          <Class Name="EndpointAddress" Action="Exclude"  Environment="WCF">
+            <Method Name=".ctor" Action="Include"  Environment="WCF"/>
+          </Class>
+          <Class Name="EndpointAddressBuilder" Action="Include"  Environment="WCF"/>
+          <Class Name="DnsEndpointIdentity" Action="Exclude"  Environment="WCF"/>
+          <Class Name="EndpointIdentity" Action="Include"  Environment="WCF">
+            <Method Name="CreateDnsIdentity" Action="Exclude"  Environment="WCF"/>
+          </Class>
+          <Class Name="ChannelFactory" Action="Include"  Environment="WCF">
+            <Method  Name="get_Endpoint" Action="Include" KnownInstance="True" Environment="WCF"/>
+          </Class>
+          <Class Name="ChannelFactory`1" Action="Include"  Environment="WCF">
+            <Method  Name="Close" Action="Include" KnownInstance="True" Environment="WCF"/>
+            <Method  Name="BeginClose" Action="Include" KnownInstance="True" Environment="WCF"/>
+            <Method  Name="EndClose" Action="Include" KnownInstance="True" Environment="WCF"/>
+          </Class>
+          <Class Name="InstanceContext" Action="Exclude"  Environment="WCF">
+            <Method Name=".ctor" Action="Include"  Environment="WCF"/>
+          </Class>
+          <Class Name="AsyncResult" Action="Default"  Environment="WCF">
+            <Method  Name="get_AsyncWaitHandle" Action="Include" KnownInstance="True" Environment="WCF"/>
+            <Method  Name="get_AsyncState" Action="Include" KnownInstance="True" Environment="WCF"/>
+          </Class>
+          <Class Name="MessageHeader`1" Action="Include"  Environment="WCF"/>
+          <Class Name="OperationContextScope" Action="Include"  Environment="WCF"/>
+          <Class Name="OperationContext" KnownInstance="True" Action="Include" Environment="WCF" >
+            <Method Name="set_Current" Action="Exclude"  Environment="WCF"/>
+            <Method Name="get_RequestContext" Action="Exclude"  Environment="WCF"/>
+          </Class>
+          <Class Name="WSHttpSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="NetTcpSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="NetMsmqSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="NetNamedPipeSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="MessageSecurityOverHttp" Action="Include"  Environment="WCF"/>
+          <Class Name="FederatedMessageSecurityOverHttp" Action="Include"  Environment="WCF"/>
+          <Class Name="MessageSecurityOverMsmq" Action="Include"  Environment="WCF"/>
+          <Class Name="MessageSecurityOverTcp" Action="Include"  Environment="WCF"/>
+          <!--Class Name="EnvelopeVersion" Action="Include" Environment="WCF"/-->
+          <Class Name="ReliableSession" Action="Include"  Environment="WCF"/>
+          <Class Name="TcpTransportSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="NamedPipeTransportSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="MsmqTransportSecurity" Action="Include"  Environment="WCF"/>
+          <Class Name="TransactionProtocol" Action="Include"  Environment="WCF"/>
+          <!--Rule for (in-proc) ServiceHost recording-->
+          <Class  Name="ServiceHostBase" Action="Include" KnownInstance="True" Environment="WCF"/>
+          <Class Name="ServiceHost" Action="Include"  Environment="WCF"/>
+          <Namespace Name="Http" Action="Default"  Environment="WCF">
+            <Class Name="HttpTransportSecurity" Action="Include"  Environment="WCF"/>
+          </Namespace>
+          <Namespace Name="Dispatcher" Action="Default"  Environment="WCF">
+            <Class Name="OperationFormatter" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ChannelHandler" Action="Default"  Environment="WCF">
+              <Method Name="OnStartSyncMessagePump(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+            <!--Ignore incoming calls in OneWay callback-->
+            <Class Name="ThreadBehavior" Action="Default"  Environment="WCF">
+              <Method Name="SynchronizationContextCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+            <!--Capture context of Duplex Callback-->
+            <Class Name="SyncMethodInvoker" Action="Default"  Environment="WCF">
+              <Method Name="Invoke(System.Object,System.Object[],System.Object[]&amp;)" Action="TotallyExclude" Context="DuplexCallback" EnableHook="True" Environment="WCF"/>
+            </Class>
+            <!--filter out Duplex Callback aux. methods (ClaimsPrincipal and CurrentContext)-->
+            <Class Name="DispatchOperationRuntime" Action="Default"  Environment="WCF">
+              <Method Name="SetClaimsPrincipalToOperationContext(System.ServiceModel.Dispatcher.MessageRpc)" Action="TotallyExclude" Environment="WCF"/>
+            </Class>
+            <Class Name="SecurityImpersonationBehavior" Action="Default"  Environment="WCF">
+              <Method Name="StartImpersonation(System.ServiceModel.Dispatcher.MessageRpc&amp;,System.IDisposable&amp;,System.Security.Principal.IPrincipal&amp;,System.Boolean&amp;)" Action="TotallyExclude" Environment="WCF"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Channels" Action="Default"  Environment="WCF">
+            <Class Name="ConnectionModeReader" Action="Default"  Environment="WCF">
+              <Method Name="Complete()" Action="TotallyExclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="IOThreadScheduler" Action="Default"  Environment="WCF">
+              <Method Name="CompletionCallback(System.Object)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+            <Class Name="Binding" Action="Include"  Environment="WCF">
+              <Method Name="get_CloseTimeout" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="BindingElement" Action="Include"  Environment="WCF"/>
+            <Class Name="SecurityBindingElement" Action="Default" Environment="WCF">
+	          <Method Name="get_EnableUnsecuredResponse" Action="Exclude" Environment="WCF"/>
+	          <Method Name="get_ProtectTokens" Action="Exclude" Environment="WCF"/>
+		    </Class>
+            <Class  Name="MessageHeaders" Action="Include" KnownInstance="True" Environment="WCF">
+              <Class Name="Header" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Count" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Action" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="MessageHeader" Action="Include"  Environment="WCF">
+              <Method Name="get_Actor" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_MustUnderstand" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Name" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Namespace" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Relay" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_IsReferenceParameter" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_DictionaryName" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="MessageEncoder" Action="TotallyExclude"  Environment="WCF"/>
+            <Class Name="AddressingHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ToHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ActionHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="RelatesToHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="AddressHeader" Action="Include"  Environment="WCF"/>
+            <Class Name="ActionHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="Message" Action="Include"  Environment="WCF">
+              <Method Name="get_IsDisposed" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_IsEmpty" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_IsFault" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_State" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="BodyWriterMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ContentOnlyMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="StringMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="NullMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="DelegatingMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ReceivedMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="BufferedMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="WsrmMessageHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="WsrmAcknowledgmentHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="WsrmSequencedMessageHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="MessageIDHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="ServiceChannelManager" Action="Exclude"  Environment="WCF"/>
+            <Class Name="MessageFault" Action="Include"  Environment="WCF"/>
+            <Class Name="ReplyToHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="MessageVersion" Action="Include"  Environment="WCF">
+              <Method Name="get_Envelope" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_Addressing" Action="Exclude"  Environment="WCF"/>
+              <Method Name="get_None" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="LocalClientSecuritySettings" Action="Include"  Environment="WCF"/>
+            <!-- capture ServiceHost-->
+            <Class Name="CommunicationObject" Action="Default"  Environment="WCF">
+              <Method  Name="Abort" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="Open" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="Close" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="BeginClose" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="BeginOpen" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="EndClose" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="EndOpen" Action="Include" KnownInstance="True" Environment="WCF"/>
+            </Class>
+            <Class Name="SocketConnection" Action="Default"  Environment="WCF">
+              <!--Ignore incoming calls in duplex and async callback-->
+              <Method Name="AsyncReadCallback(System.Boolean,System.Int32,System.Int32)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+            <Class Name="PipeConnection" Action="Default"  Environment="WCF">
+              <Method Name="OnAsyncReadComplete(System.Boolean,System.Int32,System.Int32)" Action="TotallyExclude" Context="Dummy" EnableHook="False" Environment="WCF"/>
+            </Class>
+            <Class Name="ServiceChannel" Action="Default"  Environment="WCF">
+              <!--Capture context of Async Callback-->
+              <Class Name="SendAsyncResult" Action="Default"  Environment="WCF">
+                <Method Name="CallComplete(System.Boolean,System.Exception)" Action="TotallyExclude" Context="AsyncCallback" EnableHook="True" Environment="WCF"/>
+              </Class>
+              <Method Name="OnClose" Action="TotallyExclude"  Environment="WCF"/>
+            </Class>
+             <Class Name="ServiceChannelProxy" Action="Exclude" Environment="WCF">
+              <Method Name="Invoke(System.Runtime.Remoting.Messaging.IMessage)" Action="Include" Environment="WCF"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Security" Action="Default"  Environment="WCF">
+            <Class Name="WindowsClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="UserNamePasswordClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="PeerCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="IssuedTokenClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="HttpDigestClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="X509CertificateInitiatorClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="X509CertificateRecipientClientCredential" Action="Include"  Environment="WCF"/>
+            <Class Name="X509ClientCertificateAuthentication" Action="Include"  Environment="WCF"/>
+            <Class Name="X509ServiceCertificateAuthentication" Action="Include"  Environment="WCF"/>
+            <Class Name="Basic256SecurityAlgorithmSuite" Action="Exclude"  Environment="WCF"/>
+            <Class Name="IdentityVerifier" Action="Include"  Environment="WCF">
+              <Class Name="DefaultIdentityVerifier" Action="Exclude"  Environment="WCF"/>
+            </Class>
+            <Class Name="WSSecurityOneDotOneReceiveSecurityHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="SecurityVerifiedMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="BodyWriterMessage" Action="Exclude"  Environment="WCF"/>
+            <Class Name="WSSecurityOneDotOneSendSecurityHeader" Action="Exclude"  Environment="WCF"/>
+            <Class Name="SecurityAppliedMessage" Action="Exclude"  Environment="WCF"/>
+          </Namespace>
+          <Namespace Name="Description" Action="Default"  Environment="WCF">
+            <Class Name="ClientCredentials" Action="Include"  Environment="WCF"/>
+            <Class Name="ServiceEndpoint" Action="Include"  Environment="WCF">
+              <Method  Name="get_Address" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="get_Contract" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="get_Binding" Action="Include" KnownInstance="True" Environment="WCF"/>
+            </Class>
+              <Class Name="ClientViaBehavior" Action="Include"  Environment="WCF"/>
+            <Class Name="MetadataExchangeBindings" Action="Include"  Environment="WCF"/>
+            <Class Name="MetadataExchangeClient" Action="Include"  Environment="WCF"/>
+            <Class Name="MetadataResolver" Action="Include"  Environment="WCF"/>
+            <Class Name="MetadataImporter" Action="Include"  Environment="WCF"/>
+            <Class Name="ContractDescription" Action="Include"  Environment="WCF">
+              <Method  Name="get_Operations" Action="Include" KnownInstance="True" Environment="WCF"/>
+              <Method  Name="get_CallbackContractType" Action="Include" KnownInstance="True" Environment="WCF"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="MsmqIntegration" Action="Default"  Environment="WCF">
+            <Class Name="MsmqIntegrationSecurity" Action="Include"  Environment="WCF"/>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+      <Namespace Name="Oracle" Action="Exclude"  Environment="ADO.NET">
+        <Namespace Name="DataAccess" Action="Exclude"  Environment="ADO.NET">
+          <Namespace Name="Client" Action="Default"  Environment="ADO.NET">
+            <Class Name="OracleCommand" Action="Default"  Environment="ADO.NET">
+              <Method Name="ExecuteReader" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_AddRowid" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_AddToStatementCache" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_ArrayBindCount" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_BindByName" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_FetchSize" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_InitialLOBFetchSize" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_Notification" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_NotificationAutoEnlist" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_XmlCommandType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_QueryProperties" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_SaveProperties" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="OracleConnection" Action="Default"  Environment="ADO.NET">
+              <Method Name="CreateCommand" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="OpenWithNewPassword" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="PurgeStatementCache" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="SetSessionInfo" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="set_Requery" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetOracleBFile" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleBinary" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleBlob" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleBlobForUpdate" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleClob" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleClobForUpdate" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleDate" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleDecimal" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleIntervalDS" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleIntervalYM" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleString" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleTimeSpan" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleTimeSpanLTZ" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleTimeSpanTZ" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleValue" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleValues" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetOracleXmlType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetTimeSpan" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetXmlReader" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ResetOracleType" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_ArrayBindSize" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_ArrayBindStatus" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_CollectionType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="get_OracleDbType" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_OracleDbType" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+          <Namespace Name="Types" Action="Default"  Environment="ADO.NET">
+            <Class Name="OracleBlob" Action="Include"  Environment="ADO.NET">
+              <Method Name="Read" Action="Include" EmptyInputArray="0" Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleBFile" Action="Include"  Environment="ADO.NET">
+              <Method Name="Read" Action="Include" EmptyInputArray="0" Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleClob" Action="Include"  Environment="ADO.NET">
+              <Method Name="Read" Action="Include" EmptyInputArray="0" Environment="ADO.NET"/>
+            </Class>
+            <Class Name="OracleRefCursor" Action="Include"  Environment="ADO.NET"/>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+      <Namespace Name="Sybase" Action="Exclude"  Environment="ADO.NET">
+        <Namespace Name="Data" Action="Exclude"  Environment="ADO.NET">
+          <Namespace Name="AseClient" Action="Default"  Environment="ADO.NET">
+            <Class Name="AseCommand" Action="Default"  Environment="ADO.NET">
+              <Method Name="ExecuteXmlReader" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="ResetCommandTimeout" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="SetNamedParameters" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="AseCommandBuilder" Action="Include"  Environment="ADO.NET"/>
+            <Class Name="AseConnection" Action="Include"  Environment="ADO.NET">
+              <Method Name="EnlistDistributedTransaction" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="set_NamedParameters" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="add_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_InfoMessage" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_StateChange" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="AseDataAdapter" Action="Default"  Environment="ADO.NET">
+              <Method Name="add_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="add_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdated" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="remove_RowUpdating" Action="Exclude"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="AseDataReader" Action="Default"  Environment="ADO.NET">
+              <Method Name="GetList" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetTimeSpan" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetUInt16" Action="Include"  Environment="ADO.NET"/>
+              <Method Name="GetUInt32" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+            <Class Name="AseParameter" Action="Default"  Environment="ADO.NET">
+              <Method Name="ToString" Action="Exclude"  Environment="ADO.NET"/>
+              <Method Name="set_AseDbType" Action="Include"  Environment="ADO.NET"/>
+            </Class>
+          </Namespace>
+        </Namespace>
+      </Namespace>
+    </Filter>
+  </Configuration>
+</FilterConfigurations>
+ *************************************************************************** 
+
+ *************************************************************************** 
+FilterDataMgr::ParseFilterFileEnvironments ==> START
+FilterDataMgr::ParseFilterFileEnvironments ==> COMPLETED
+
+ *************************************************************************** 
+
+ *************************************************************************** 
+START Parsing and removing irrelevant nodes
+COMPLITED ==>> NO CHANGE IN FILTER FILE.
+
+ *************************************************************************** 
+
+ *************************************************************************** 
+FilterDataMgr::ValidateFilter ==> START
+FilterDataMgr::ValidateFilter ==> COMPLETED OK
+
+ *************************************************************************** 
+
+ ******************** FilterDataMgr - Cached nodes dump ******************** 
+System
+System.Data.IDbCommand::get_Parameters
+System.Data.Common.DataAdapter::get_Container
+System.Data.IDataParameter
+System.Data.IDbCommand::ExecuteReader
+System.AppDomain
+System.Data.Constraint::get_Table
+System.Data.InternalDataCollectionBase::IndexOf
+System.Data.OleDb.OleDbParameter
+System.Activator
+System.Data.DataSet::set_SchemaSerializationMode
+System.Data.OracleClient.OracleParameter::get_OracleType
+System.Collections.Generic.List`1
+System.Data.IDbConnection::Open
+System.Data.DataTable::add_RowChanged
+System.Data.Odbc
+System.Threading.Mutex
+System.Activator::GetObject
+System.Data.InternalDataCollectionBase::remove_CollectionChanged
+System.Data.OracleClient.OracleParameter
+System.Collections.ObjectModel.Collection`1
+System.Data.DataTable::get_Rows
+Sybase.Data.AseClient
+System.Data.DataColumn::get_ColumnName
+System.Data.Odbc.OdbcConnection
+System.Net.LazyAsyncResult::InvokeCallback(System.Object)
+System.Activator::CreateInstance
+System.Data.DataSet
+System.Data.DataTable::remove_TableCleared
+System.Threading.Tasks
+System.Data.Odbc.OdbcConnection::remove_InfoMessage
+System.Activator::CreateInstance`1
+System.Data.Common.DbConnection::add_StateChange
+System.Data.IDbTransaction::Commit
+System.Net.NetworkCredential
+System.Collections
+System.Data.SqlClient.SqlParameter::ResetSqlDbType
+System.ServiceModel.OperationContextScope
+Oracle.DataAccess.Types.OracleClob::Read
+System.Data.DataSet::add_MergeFailed
+System.ServiceModel.Description.MetadataResolver
+System.Data.OleDb.OleDbDataAdapter::add_RowUpdating
+System.Xml.XmlDictionaryReaderQuotas::get_MaxDepth
+System.Collections.ObjectModel
+System.Data.Common
+System.Data.Common.DataAdapter::get_FillLoadOption
+System.Runtime.CompilerServices.TaskAwaiter
+System.Data.IDbConnection::Close
+System.Data.Common.DbConnection::get_DataSource
+System.Threading.WaitHandle::WaitAny
+System.Collections.Generic
+System.Data.DataTable::OnTableClearing
+System.Data.Common.DataAdapter::set_UpdateBatchSize
+System.Collections.Generic.List`1.Enumerator
+System.Data.OleDb.OleDbDataReader::GetTimeSpan
+System.Data.DataSet::remove_Initialized
+System.Data.IDbDataAdapter::get_SelectCommand
+System.Data.OracleClient.OracleDataReader
+System.Net.ListenerAsyncResult::InvokeCallback(System.Object)
+System.Data.DataTable
+System.Data.OracleClient.OracleDataReader::GetOracleNumber
+System.Xml.XmlDataDocument::get_DataSet
+System.Data.IDataRecord::GetValue
+System.Data.Odbc.OdbcParameter::get_OdbcType
+System.Data.DataTable::remove_RowDeleted
+System.Net
+System.Net.LazyAsyncResult
+Sybase.Data.AseClient.AseConnection
+System.Net.BufferAsyncResult
+Oracle.DataAccess.Client.OracleDataReader::GetOracleString
+System.Data
+System.Data.SqlClient.SqlDataReader::GetSqlInt64
+System.Threading.Tasks.Task`1::GetAwaiter()
+System.Data.Common.DataAdapter::get_Site
+System.Net.BufferAsyncResult::InvokeCallback(System.Object)
+System.Data.DataColumnMapping
+System.Net.ListenerAsyncResult
+System.Data.Common.DbTransaction::Dispose
+System.Threading.Tasks.Task::GetAwaiter()
+System.Data.IDbDataParameter::get_Size
+System.Net.Sockets
+System.Data.OleDb.OleDbCommandBuilder
+System.Net.Sockets.OverlappedAsyncResult
+System.Net.Sockets.OverlappedAsyncResult::InvokeCallback(System.Object)
+System.Data.IDbTransaction::Rollback
+System.Xml.XmlDictionaryReaderQuotas::get_MaxNameTableCharCount
+System.Data.Common.DataAdapter::ShouldSerializeFillLoadOption
+System.Data.IDataAdapter::get_MissingSchemaAction
+System.Data.IDataParameterCollection::Contains
+System.Threading
+Oracle.DataAccess.Client.OracleDataAdapter::add_RowUpdating
+System.Threading.Tasks.Task
+System.Data.DataTable::remove_RowChanging
+System.Runtime.Remoting.Channels.Http.HttpChannel::set_IsSecured
+System.Threading.Tasks.Task`1
+System.Xml.XmlDataDocument::.ctor
+System.Xml.XmlDictionaryReaderQuotas::get_MaxBytesPerRead
+System.Data.IDataParameter::set_DbType
+System.Data.OracleClient.OracleDataAdapter::add_RowUpdated
+System.Threading.WaitHandle
+Sybase.Data.AseClient.AseCommand::ExecuteXmlReader
+System.Data.DataTable::add_ColumnChanged
+System.ServiceModel.Channels.IOThreadScheduler
+System.Threading.WaitHandle::Close
+System.Threading.WaitHandle::WaitAll
+System.Data.Common.DataAdapter::ShouldSerializeTableMappings
+System.Data.DataSet::set_Namespace
+System.Data.InternalDataCollectionBase::add_CollectionChanged
+System.Xml.XmlDataDocument::Load
+System.Data.OleDb.OleDbDataAdapter
+System.Threading.WaitHandle::SignalAndWait
+System.Data.Common.DataAdapter::ResetFillLoadOption
+System.Data.DataSet::set_CaseSensitive
+System.Threading.WaitHandle::WaitOne
+System.Data.SqlClient.SqlParameter::get_XmlSchemaCollectionDatabase
+System.Data.DataColumn::get_ReadOnly
+System.Threading.Semaphore
+System.Xml
+System.ServiceModel.MessageSecurityOverMsmq
+System.ServiceModel.Security.X509ServiceCertificateAuthentication
+System.Xml.XmlDataDocument
+System.Data.Common.DataAdapter::get_ReturnProviderSpecificTypes
+System.Data.Common.DataTableMapping
+System.Data.Common.DataAdapter::set_AcceptChangesDuringFill
+System.Data.DataTable::get_Locale
+System.ServiceModel.MessageHeader`1
+System.Data.Odbc.OdbcDataAdapter::add_RowUpdating
+System.Runtime.Remoting.RemotingConfiguration::get_CustomErrorsMode()
+System.Xml.XmlDataDocument::Save
+System.Data.Common.DataAdapter
+System.Data.Constraint::ToString
+System.Xml.XmlDictionaryReaderQuotas
+System.Data.SqlClient.SqlDataReader::GetSqlByte
+System.Xml.XmlDictionaryReaderQuotas::get_MaxArrayLength
+System.Xml.XmlDictionaryReaderQuotas::get_MaxStringContentLength
+System.Data.Common.DataAdapter::ShouldSerializeAcceptChangesDuringFill
+System.Data.Common.DataAdapter::get_AcceptChangesDuringFill
+System.Runtime.Remoting.Messaging.AsyncResult::get_AsyncWaitHandle
+System.ServiceModel.Security.Basic256SecurityAlgorithmSuite
+System.Data.Common.DataAdapter::get_AcceptChangesDuringUpdate
+System.Data.Common.DataAdapter::get_ContinueUpdateOnError
+System.Data.SqlClient.SqlConnection::remove_InfoMessage
+System.Data.Common.DataAdapter::get_UpdateBatchSize
+System.Data.DataTable::get_IsInitialized
+System.Data.Common.DataAdapter::set_AcceptChangesDuringUpdate
+System.ServiceModel.Channels.WsrmMessageHeader
+System.Data.Common.DataAdapter::set_ContinueUpdateOnError
+System.ServiceModel.Channels.BindingElement
+System.Data.Common.DataAdapter::set_FillLoadOption
+System.Data.IDataAdapter::Update
+System.Data.Constraint
+System.Data.Common.DataAdapter::set_ReturnProviderSpecificTypes
+System.Data.SqlClient.SqlParameter::get_XmlSchemaCollectionName
+System.ServiceModel.Channels.ServiceChannelProxy
+System.Data.DataTable::add_RowChanging
+System.Data.OracleClient.OracleConnection::remove_InfoMessage
+System.Data.Common.DataAdapter::add_FillError
+System.Data.Common.DataAdapter::remove_FillError
+System.Data.Common.DataColumnMapping
+System.Data.IDbDataAdapter
+Oracle.DataAccess.Client.OracleDataReader::GetOracleIntervalYM
+System.Data.Common.DataColumnMapping::get_DataSetColumn
+System.ServiceModel.Description.ContractDescription
+System.Data.OracleClient.OracleCommand
+System.Data.Common.DataColumnMapping::get_SourceColumn
+System.Data.Common.DataTableMapping::get_DataSetTable
+System.Data.OleDb.OleDbDataReader
+System.Data.Common.DataTableMapping::get_SourceTable
+System.Data.Common.DbCommand
+System.Transactions.TransactionScope
+System.Data.Common.DbCommand::get_DesignTimeVisible
+System.Data.DataTable::WriteXml
+System.Runtime.Remoting.Proxies.RemotingProxy::Invoke(System.Runtime.Remoting.Messaging.IMessage)
+System.Data.Common.DbCommandBuilder
+System.Data.IDataRecord::GetInt32
+System.ServiceModel.Channels.MessageHeader::get_Relay
+System.Data.Common.DbConnection
+System.Data.Constraint::get_ConstraintName
+System.Data.DataColumn::get_AutoIncrement
+System.Data.Common.DbConnection::EnlistTransaction
+System.Runtime.Remoting.Channels.Ipc.IpcClientChannel::set_IsSecured
+System.Data.Common.DbConnection::GetSchema
+System.Data.DataSet::GetObjectData
+System.Data.Common.DbParameter::set_SourceColumnNullMapping
+System.Data.Common.DbConnection::get_ServerVersion
+System.ServiceModel.Channels.ReplyToHeader
+Sybase.Data
+System.Data.Common.DbConnection::remove_StateChange
+System.Data.IDataAdapter::GetFillParameters
+System.Data.Common.DbDataReader
+System.Data.Common.DbDataReader::GetEnumerator
+System.Data.OracleClient.OracleDataReader::GetOracleBinary
+System.Data.SqlClient.SqlDataAdapter::remove_RowUpdating
+System.Data.Common.DbDataReader::GetProviderSpecificFieldType
+System.Data.Common.DbDataReader::GetProviderSpecificValue
+System.Data.Common.DbDataReader::GetProviderSpecificValues
+System.Data.IDataParameter::set_Direction
+System.Data.Common.DbDataReader::get_HasRows
+System.Data.Common.DbDataReader::get_VisibleFieldCount
+System.Data.DataSet::remove_MergeFailed
+System.Data.Common.DbDataReader::GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)
+System.Data.DataRelation::get_ChildKeyConstraint
+System.Data.Common.DbParameter
+System.Data.IDataRecord::get_FieldCount
+System.Runtime.Remoting.WellKnownClientTypeEntry::get_ObjectType
+System.Data.SqlClient.SqlDataReader::GetSqlBinary
+System.Data.Common.DbParameter::ResetDbType
+System.Data.OleDb.OleDbDataAdapter::remove_RowUpdating
+System.ServiceModel.MsmqTransportSecurity
+System.Data.Common.DbParameter::get_SourceColumnNullMapping
+System.Data.Common.DbTransaction
+System.Data.OleDb.OleDbParameter::ResetOleDbType
+System.Data.SqlClient
+System.ServiceModel.Security.SecurityVerifiedMessage
+System.Data.SqlClient.SqlCommand
+System.Data.IDbConnection::get_State
+System.Data.OracleClient.OracleConnection::CreateCommand
+System.Data.SqlClient.SqlCommand::get_Notification
+System.Data.SqlClient.SqlCommand::get_NotificationAutoEnlist
+System.Data.DataTable::add_TableNewRow
+System.Data.SqlClient.SqlCommandBuilder
+System.Data.OracleClient.OracleDataReader::GetOracleValues
+System.ServiceModel.Dispatcher
+System.Data.SqlClient.SqlConnection
+System.Data.SqlClient.SqlConnection::get_FireInfoMessageEventOnUserErrors
+System.Data.SqlClient.SqlConnection::get_PacketSize
+Oracle.DataAccess.Client.OracleDataReader
+System.Data.SqlClient.SqlConnection::get_StatisticsEnabled
+System.Runtime.Remoting.RemotingConfiguration::get_ApplicationName
+System.Data.DataColumn::get_ColumnMapping
+System.Data.SqlClient.SqlConnection::get_WorkstationId
+System.Runtime.Remoting.Lifetime.ILease::get_InitialLeaseTime
+System.Data.DataColumn::get_Namespace
+System.Data.SqlClient.SqlConnection::add_InfoMessage
+System.Data.SqlClient.SqlDataAdapter
+Oracle.DataAccess.Types.OracleClob
+System.Data.SqlClient.SqlDataAdapter::add_RowUpdated
+System.ServiceModel.Description.ServiceEndpoint::get_Contract
+Oracle.DataAccess.Client.OracleConnection::CreateCommand
+System.Data.SqlClient.SqlDataAdapter::add_RowUpdating
+System.Data.SqlClient.SqlDataAdapter::remove_RowUpdated
+System.Data.SqlClient.SqlDataReader
+System.Data.IDbTransaction::get_Connection
+System.Data.SqlClient.SqlDataReader::GetSqlBoolean
+System.Data.DataTable::get_TableName
+System.Data.SqlClient.SqlDataReader::GetSqlBytes
+System.Data.SqlClient.SqlDataReader::GetSqlChars
+Sybase.Data.AseClient.AseConnection::remove_InfoMessage
+System.Data.IDataParameterCollection::IndexOf
+System.Data.SqlClient.SqlDataReader::GetSqlDateTime
+System.Data.SqlClient.SqlDataReader::GetSqlDecimal
+Oracle.DataAccess.Client.OracleParameter::get_OracleDbType
+System.Data.OracleClient.OracleCommandBuilder
+System.Data.SqlClient.SqlDataReader::GetSqlDouble
+System.Data.SqlClient.SqlParameter::ToString
+System.ServiceModel.Channels.MessageHeader::get_Actor
+System.Data.IDbDataAdapter::set_SelectCommand
+System.Data.Odbc.OdbcCommandBuilder
+System.Data.SqlClient.SqlDataReader::GetSqlGuid
+Oracle.DataAccess.Types.OracleBlob
+System.Data.SqlClient.SqlDataReader::GetSqlInt16
+System.Data.SqlClient.SqlDataReader::GetSqlInt32
+System.Data.SqlClient.SqlDataReader::GetSqlMoney
+System.Data.IDbDataParameter::get_Precision
+System.Data.SqlClient.SqlDataReader::GetSqlSingle
+System.Data.SqlClient.SqlDataReader::GetSqlString
+System.Data.SqlClient.SqlDataReader::GetSqlValue
+System.ServiceModel.Description.ContractDescription::get_CallbackContractType
+System.Data.SqlClient.SqlDataReader::GetSqlXml
+System.Data.SqlClient.SqlParameter
+System.Data.SqlClient.SqlParameter::get_CompareInfo
+System.Data.IDbConnection::get_ConnectionTimeout
+System.Data.SqlClient.SqlParameter::get_LocaleId
+System.Runtime.Remoting.ActivatedClientTypeEntry
+System.Data.SqlClient.SqlParameter::get_Offset
+System.Data.SqlClient.SqlParameter::get_SqlDbType
+System.Data.InternalDataCollectionBase::InsertAt
+System.Data.SqlClient.SqlParameter::get_SqlValue
+System.Data.IDataParameter::set_ParameterName
+System.Data.InternalDataCollectionBase::remove_CollectionChanging
+Oracle.DataAccess.Client.OracleDataReader::GetOracleBinary
+Sybase.Data.AseClient.AseDataReader::GetList
+System.Data.SqlClient.SqlParameter::get_UdtTypeName
+System.Data.SqlClient.SqlParameter::get_XmlSchemaCollectionOwningSchema
+System.Data.SqlClient.SqlParameter::set_CompareInfo
+System.EnterpriseServices.RemoteServicedComponentProxy::Dispose(System.Boolean)
+System.Data.SqlClient.SqlParameter::set_LocaleId
+System.Data.DataRelation::get_ParentColumns
+System.Data.SqlClient.SqlParameter::set_Offset
+System.ServiceModel.Channels.StringMessage
+Oracle.DataAccess.Client.OracleDataAdapter::add_RowUpdated
+System.Data.SqlClient.SqlParameter::set_SqlDbType
+System.Data.IDataRecord::get_Item
+System.Data.SqlClient.SqlParameter::set_SqlValue
+System.Data.DataSet::WriteXml
+System.ServiceModel.Channels.MessageEncoder
+System.ServiceModel.Security.IdentityVerifier
+Sybase.Data.AseClient.AseCommand::SetNamedParameters
+System.Data.SqlClient.SqlParameter::set_UdtTypeName
+Sybase.Data.AseClient.AseParameter::ToString
+System.Data.SqlClient.SqlParameter::set_XmlSchemaCollectionDatabase
+System.Data.DataSet::set_DataSetName
+System.Data.OracleClient.OracleDataReader::GetOracleValue
+System.Data.IDbCommand::Prepare
+System.Data.SqlClient.SqlParameter::set_XmlSchemaCollectionName
+System.Data.SqlClient.SqlParameter::set_XmlSchemaCollectionOwningSchema
+System.Data.SqlClient.SqlStream
+System.Data.SqlClient.SqlTransaction
+System.Data.SqlClient.SqlTransaction::Save
+System.Data.Odbc.OdbcConnection::get_Driver
+System.Data.Odbc.OdbcConnection::add_InfoMessage
+System.Data.DataTable::WriteXmlSchema
+System.Data.Odbc.OdbcParameter
+System.ServiceModel.EndpointAddress::.ctor
+System.Data.IDataParameter::get_Value
+System.Data.Odbc.OdbcDataAdapter
+System.Data.DataTable::OnTableNewRow
+System.Data.Odbc.OdbcDataAdapter::add_RowUpdated
+System.Data.Odbc.OdbcDataAdapter::remove_RowUpdated
+System.Data.Odbc.OdbcDataAdapter::remove_RowUpdating
+Sybase
+System.Data.Odbc.OdbcDataReader
+System.Data.IDbConnection::ChangeDatabase
+System.Data.Odbc.OdbcDataReader::GetDate
+System.Data.Odbc.OdbcDataReader::GetTime
+System.ServiceModel.Channels
+System.Data.IDataRecord::GetDateTime
+System.Data.Odbc.OdbcParameter::ResetOdbcType
+System.Data.InternalDataCollectionBase::OnCollectionChanged
+System.Data.Odbc.OdbcParameter::ToString
+System.Data.Odbc.OdbcParameter::set_OdbcType
+System.Data.DataColumn::get_AutoIncrementStep
+System.Data.DataRow::get_RowError
+System.Data.OleDb
+System.Data.OleDb.OleDbConnection
+System.ServiceModel.EndpointAddress
+System.Data.DataTable::get_Prefix
+System.Data.OleDb.OleDbConnection::get_Provider
+System.Data.OleDb.OleDbConnection::add_InfoMessage
+System.Data.OleDb.OleDbConnection::remove_InfoMessage
+System.Data.DataTable::GetObjectData
+System.Data.OleDb.OleDbDataAdapter::add_RowUpdated
+System.Data.ITableMappingCollection
+Oracle.DataAccess.Client.OracleCommand::set_XmlCommandType
+System.Data.OleDb.OleDbDataAdapter::remove_RowUpdated
+System.Data.OleDb.OleDbParameter::ToString
+System.ServiceModel.Channels.ReceivedMessage
+System.Data.OleDb.OleDbParameter::get_OleDbType
+System.ServiceModel.Description.MetadataExchangeBindings
+System.Data.OleDb.OleDbParameter::set_OleDbType
+System.Data.DataSet::get_EnforceConstraints
+System.Data.OracleClient
+System.Runtime.Remoting.Channels.Http.HttpChannel
+System.Data.InternalDataCollectionBase::get_Count
+System.Data.OracleClient.OracleDataAdapter
+System.ServiceModel.ChannelFactory`1::BeginClose
+System.Data.OracleClient.OracleDataAdapter::add_RowUpdating
+System.ServiceModel.MsmqIntegration
+System.Data.OracleClient.OracleDataAdapter::remove_RowUpdated
+Oracle.DataAccess.Client.OracleConnection::add_InfoMessage
+System.Data.OracleClient.OracleDataAdapter::remove_RowUpdating
+System.Data.OracleClient.OracleDataReader::GetOracleBFile
+System.Runtime.Remoting.ObjectHandle
+System.Data.DataSet::get_Site
+System.Data.InternalDataCollectionBase::get_IsReadOnly
+System.Data.OracleClient.OracleDataReader::GetOracleDateTime
+Sybase.Data.AseClient.AseCommand::ResetCommandTimeout
+System.Data.IDataParameter::get_Direction
+System.Data.OracleClient.OracleDataReader::GetOracleLob
+System.Data.OracleClient.OracleDataReader::GetOracleMonthSpan
+System.Data.IDbDataAdapter::get_InsertCommand
+System.Data.InternalDataCollectionBase::get_Item
+System.Data.OracleClient.OracleDataReader::GetOracleString
+System.Runtime.Remoting.RemotingServices::Connect
+System.ServiceModel.Description.ServiceEndpoint::get_Address
+System.Data.OracleClient.OracleDataReader::GetOracleTimeSpan
+System.Data.OracleClient.OracleConnection::add_InfoMessage
+System.Data.OracleClient.OracleDataReader::GetTimeSpan
+System.Data.OracleClient.OracleParameter::ResetOracleType
+System.ServiceModel.Channels.SecurityBindingElement::get_ProtectTokens
+System.Data.IDbDataParameter::set_Scale
+System.Data.OracleClient.OracleParameter::ToString
+System.Data.IDbCommand::ExecuteScalar
+System.Data.OracleClient.OracleParameter::set_OracleType
+System.Runtime.Remoting.Lifetime.ILease::Renew
+System.Data.DataTable::add_ColumnChanging
+Oracle.DataAccess.Types.OracleBlob::Read
+Sybase.Data.AseClient.AseDataReader::GetUInt32
+System.Data.OracleClient.OracleCommand::ExecuteReader
+System.Data.OracleClient.OracleConnection
+System.Data.IDataParameter::get_SourceVersion
+System.Data.OracleClient.OracleLob
+System.Data.OracleClient.OracleLob::Read
+System.Data.OracleClient.OracleBFile
+System.Data.OracleClient.OracleBFile::Read
+System.ServiceModel.Channels.MessageHeader::get_Namespace
+System.Data.IDbCommand
+System.ServiceModel.DnsEndpointIdentity
+System.Data.IDbCommand::Cancel
+System.Data.InternalDataCollectionBase::Remove
+System.Data.IDbCommand::CreateParameter
+System.Data.IDbCommand::ExecuteNonQuery
+System.Data.IDbCommand::get_Connection
+System.Data.IDbCommand::get_CommandText
+System.Data.IDbCommand::get_CommandTimeout
+System.ServiceModel.MessageSecurityOverHttp
+System.Data.IDbCommand::get_CommandType
+System.Data.DataTable::get_Item
+System.Data.IDbCommand::get_Transaction
+System.Data.DataRow::get_ItemArray
+System.Data.IDbCommand::get_UpdatedRowSource
+System.ServiceModel.Dispatcher.SyncMethodInvoker
+System.Data.DataTable::get_CaseSensitive
+System.Data.DataTable::get_DisplayExpression
+System.Data.IDbConnection
+System.EnterpriseServices
+System.Data.IDbConnection::BeginTransaction
+System.Data.IDbConnection::CreateCommand
+System.ServiceModel.Channels.IOThreadScheduler::CompletionCallback(System.Object)
+System.Data.IDataRecord::GetByte
+System.Data.IDataRecord::GetChar
+System.Data.IDbConnection::get_ConnectionString
+System.Data.IDbConnection::get_Database
+System.Data.DataTable::OnTableCleared
+System.ServiceModel.Description
+System.Data.IDataReader
+System.Runtime.Remoting.RemotingConfiguration::get_ApplicationId()
+System.Data.DataColumn::get_AutoIncrementSeed
+System.Data.IDataRecord::GetDouble
+System.Data.IDataReader::Close
+System.Data.DataSet::get_Prefix
+System.Data.IDataReader::GetSchemaTable
+System.ServiceModel.ServiceHost
+System.ServiceModel.TcpTransportSecurity
+System.Data.IDataReader::NextResult
+System.Data.IDataReader::Read
+System.Runtime.Remoting.Channels.Ipc.IpcChannel::set_IsSecured
+System.Runtime.Remoting.Messaging.AsyncResult::get_AsyncState
+System.Data.IDataReader::get_Depth
+System.ServiceModel.Security.X509ClientCertificateAuthentication
+System.Data.IDataReader::get_IsClosed
+System.Data.IDataReader::get_RecordsAffected
+System.Data.DataTable::get_Site
+System.ServiceModel.Security.X509CertificateRecipientClientCredential
+System.Data.IDataRecord
+System.ServiceModel.Channels.MessageHeaders.Header
+System.Data.IDataRecord::GetBoolean
+System.Data.InternalDataCollectionBase::add_CollectionChanging
+Oracle.DataAccess.Client.OracleCommandBuilder
+System.Data.Constraint::get_ExtendedProperties
+System.Data.IDataRecord::GetBytes
+System.ServiceModel.Dispatcher.ChannelHandler::OnStartSyncMessagePump(System.Object)
+System.Runtime.CompilerServices
+System.Data.IDataRecord::GetChars
+System.Runtime.Remoting.Messaging.ServerContextTerminatorSink
+System.Data.IDataRecord::GetDecimal
+System.Data.InternalDataCollectionBase
+System.Runtime.Remoting.RemotingConfiguration
+System.Data.DataSet::get_CaseSensitive
+System.ServiceModel.Channels.MessageHeaders
+System.Data.IDataRecord::GetFloat
+System.Data.DataTable::get_ParentRelations
+System.Data.IDataRecord::GetGuid
+System.Runtime.Remoting.RemotingServices
+System.Data.IDataRecord::GetInt16
+System.Data.IDataRecord::GetInt64
+System.Data.DataColumn::get_Table
+System.Data.IDataRecord::GetString
+System.Data.IDbDataParameter
+System.Data.DataRow::get_Item
+System.Data.IDataRecord::GetValues
+System.Data.IDataRecord::GetData
+System.Data.IDataRecord::GetDataTypeName
+System.Data.DataTable::OnColumnChanged
+System.Data.IDataRecord::GetFieldType
+System.Data.IDataRecord::GetName
+System.Data.IDataRecord::GetOrdinal
+System.Data.IDataRecord::IsDBNull
+System.ServiceModel.Security
+System.Data.DataSet::get_RemotingFormat
+System.Data.DataTable::System.ComponentModel.IListSource.GetList
+System.Data.IDbDataAdapter::get_DeleteCommand
+System.ServiceModel.Channels.MessageVersion::get_None
+System.Data.DataRow
+System.Data.IDbDataAdapter::get_UpdateCommand
+System.Data.IDbDataAdapter::set_DeleteCommand
+System.Data.IDbDataAdapter::set_InsertCommand
+System.ServiceModel.Channels.MessageHeader::get_MustUnderstand
+System.Data.IDbDataAdapter::set_UpdateCommand
+System.Data.IDbDataParameter::get_Scale
+System.Data.DataColumn::get_MaxLength
+System.Data.IDbDataParameter::set_Precision
+System.Data.IDbDataParameter::set_Size
+System.Data.IDbTransaction
+System.Data.IDbTransaction::get_IsolationLevel
+System.Data.IDataAdapter
+System.Runtime.Remoting.Proxies
+Oracle.DataAccess.Client.OracleCommand
+System.Data.IDataAdapter::Fill
+Oracle.DataAccess.Client.OracleParameter
+System.Data.IDataAdapter::FillSchema
+System.Runtime.Remoting.Services
+System.Data.DataRelation::get_ExtendedProperties
+System.Data.IDataAdapter::get_MissingMappingAction
+System.ServiceModel.EndpointIdentity::CreateDnsIdentity
+System.Data.IDataAdapter::get_TableMappings
+System.Runtime.Remoting.Channels.Tcp.TcpClientChannel::.ctor
+System.Data.ITableMappingCollection::Add
+System.Data.ITableMappingCollection::RemoveAt
+System.Data.ITableMappingCollection::GetByDataSetTable
+System.Data.DataRelation::ToString
+System.Data.IColumnMappingCollection
+System.Runtime.Remoting.Channels.Ipc.IpcClientChannel
+System.Data.IDataParameter::get_DbType
+System.Data.DataTable::OnRowDeleting
+System.Data.IDataParameter::get_IsNullable
+System.Data.IDataParameter::get_ParameterName
+System.ServiceModel.NetMsmqSecurity
+System.Data.IDataParameter::get_SourceColumn
+System.Data.IDataParameter::set_SourceColumn
+Oracle.DataAccess.Client.OracleCommand::ExecuteReader
+System.Data.IDataParameter::set_SourceVersion
+Oracle.DataAccess.Client.OracleParameter::ToString
+System.Data.DataColumn::ToString
+System.Data.DataSet::get_HasErrors
+System.Data.DataTable::get_Constraints
+System.Data.IDataParameter::set_Value
+System.Data.IDataParameterCollection
+System.Data.IDataParameterCollection::get_Count
+System.ServiceModel.OperationContext::get_RequestContext
+System.Data.DataRow::get_RowState
+System.Data.IDataParameterCollection::get_IsFixedSize
+System.ServiceModel.Dispatcher.ThreadBehavior::SynchronizationContextCallback(System.Object)
+System.Data.IDataParameterCollection::get_IsReadOnly
+System.Data.IDataParameterCollection::get_IsSynchronized
+System.Data.IDataParameterCollection::get_SyncRoot
+System.ServiceModel.InstanceContext::.ctor
+System.Data.DataColumn
+System.ServiceModel.Channels.CommunicationObject::Abort
+System.Data.DataColumn::get_AllowDBNull
+System.Data.DataSet::set_Site
+Sybase.Data.AseClient.AseDataReader
+System.Data.DataColumn::get_Caption
+System.Data.DataColumn::get_DataType
+System.ServiceModel.Dispatcher.DispatchOperationRuntime::SetClaimsPrincipalToOperationContext(System.ServiceModel.Dispatcher.MessageRpc)
+System.Data.DataColumn::get_DateTimeMode
+System.Data.DataColumn::get_DesignMode
+System.ServiceModel.Channels.ServiceChannel
+System.ServiceModel.Channels.ToHeader
+System.Data.DataColumn::get_Expression
+System.Runtime.Remoting
+System.Data.DataColumn::get_ExtendedProperties
+System.Data.DataTable::get_Columns
+System.Data.DataColumn::get_Ordinal
+System.Data.DataColumn::get_Prefix
+System.Data.DataTable::get_DesignMode
+System.Transactions
+System.Data.DataColumn::get_Unique
+System.Data.DataColumn::SetOrdinal
+System.Data.DataSet::get_IsInitialized
+System.Data.DataRelation
+System.EnterpriseServices.RemoteServicedComponentProxy
+System.Data.DataRow::GetColumnError
+System.Runtime.Remoting.RemotingConfiguration::get_ProcessId()
+System.Data.DataRelation::get_ChildColumns
+System.Runtime.Remoting.Channels.Http.HttpChannel::.ctor
+System.Data.DataRelation::get_ChildTable
+System.Data.DataRelation::get_DataSet
+System.Data.DataTable::get_PrimaryKey
+System.ServiceModel.Dispatcher.SecurityImpersonationBehavior
+System.Data.DataRelation::get_Nested
+System.Data.DataRelation::get_ParentKeyConstraint
+System.ServiceModel.InstanceContext
+Sybase.Data.AseClient.AseDataReader::GetTimeSpan
+System.Data.DataRelation::get_ParentTable
+System.Runtime.Remoting.Messaging.ServerContextTerminatorSink::SyncProcessMessage
+System.Data.DataRelation::get_RelationName
+System.Data.DataSet::System.ComponentModel.IListSource.GetList
+System.Data.DataSet::get_DataSetName
+System.Data.DataSet::get_DefaultViewManager
+System.Data.DataSet::get_ExtendedProperties
+Oracle.DataAccess.Client.OracleConnection::remove_InfoMessage
+System.Data.DataRow::IsNull
+System.Data.DataSet::get_Locale
+System.Data.DataSet::get_Namespace
+System.Data.DataSet::get_Relations
+System.Data.DataSet::get_SchemaSerializationMode
+System.Runtime.Remoting.Channels.Ipc.IpcClientChannel::.ctor
+System.Data.DataSet::get_Tables
+System.Data.DataSet::WriteXmlSchema
+System.Data.DataSet::set_EnforceConstraints
+System.ServiceModel.Channels.CommunicationObject::BeginClose
+System.Data.DataSet::set_Locale
+System.ServiceModel.Channels.SocketConnection::AsyncReadCallback(System.Boolean,System.Int32,System.Int32)
+System.Data.DataSet::set_RemotingFormat
+System.Data.DataSet::add_Initialized
+System.Runtime.Remoting.Activation.UrlAttribute
+System.Data.DataRow::HasVersion
+System.Runtime.Remoting.Channels.Tcp.TcpClientChannel::set_IsSecured
+System.Data.DataTable::get_Count
+System.Data.DataTable::ToString
+System.Data.InternalDataCollectionBase::get_IsSynchronized
+System.Data.DataTable::get_ChildRelations
+System.Data.DataTable::add_TableClearing
+System.Data.DataTable::get_Container
+System.Data.DataTable::get_DataSet
+System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+System.ServiceModel.Channels.BufferedMessage
+System.Data.DataTable::get_DefaultView
+System.Data.DataTable::get_HasErrors
+System.Data.InternalDataCollectionBase::GetEnumerator
+System.Runtime.Remoting.RemotingConfiguration::IsRemotelyActivatedClientType(System.Type)
+System.Data.DataTable::get_MinimumCapacity
+System.Data.DataTable::get_Namespace
+System.Data.DataTable::OnColumnChanging
+System.Data.DataTable::OnRowChanged
+System.Data.DataTable::OnRowChanging
+System.ServiceModel.Channels.ServiceChannel.SendAsyncResult::CallComplete(System.Boolean,System.Exception)
+System.Data.DataTable::OnRowDeleted
+System.Data.DataTable::add_Initialized
+System.ServiceModel.Dispatcher.ChannelHandler
+System.ServiceModel.TransactionProtocol
+System.Data.DataTable::add_RowDeleted
+System.Data.DataTable::add_RowDeleting
+System.Data.DataTable::add_TableCleared
+System.Runtime.Remoting.Channels.Tcp.TcpChannel
+System.Data.DataTable::remove_ColumnChanged
+System.Data.DataTable::remove_ColumnChanging
+System.Data.InternalDataCollectionBase::OnCollectionChanging
+System.Data.DataTable::remove_Initialized
+System.Runtime.Remoting.Channels.Http.HttpClientChannel::CreateMessageSink(System.String,System.Object,System.String&)
+System.Data.DataTable::remove_RowChanged
+Sybase.Data.AseClient.AseConnection::EnlistDistributedTransaction
+System.Data.DataTable::remove_RowDeleting
+System.Data.DataTable::remove_TableClearing
+System.Data.DataTable::remove_TableNewRow
+System.Data.DataRow::BeginEdit
+System.Data.DataRow::CancelEdit
+System.Data.DataRow::EndEdit
+System.Data.InternalDataCollectionBase::Add
+System.Data.DataRow::get_HasErrors
+System.Data.DataRow::get_Table
+System.Data.InternalDataCollectionBase::get_SyncRoot
+System.ServiceModel.Channels.MessageHeader::get_DictionaryName
+System.Data.InternalDataCollectionBase::Contains
+System.Data.InternalDataCollectionBase::Insert
+System.Data.InternalDataCollectionBase::RemoveAt
+System.Data.InternalDataCollectionBase::AddRange
+System.Runtime.Remoting.Activation
+System.ServiceModel.AsyncResult::get_AsyncState
+System.Data.InternalDataCollectionBase::Clear
+System.Data.DataTableMapping
+System.Runtime
+System.Runtime.CompilerServices.TaskAwaiter`1
+System.Runtime.CompilerServices.TaskAwaiter`1::GetResult()
+System.Runtime.Remoting.Activation.UrlAttribute::.ctor
+System.Runtime.Remoting.Messaging
+System.Runtime.Remoting.Messaging.AsyncResult
+System.Runtime.Remoting.Messaging.AsyncResult::SyncProcessMessage
+System.Runtime.Remoting.Messaging.ServerContextTerminatorSink::AsyncProcessMessage
+System.Runtime.Remoting.Channels.Ipc.IpcChannel::.ctor
+System.Runtime.Remoting.Services.RemotingClientProxy
+System.Runtime.Remoting.Channels
+System.Runtime.Remoting.Channels.Http
+System.Runtime.Remoting.Channels.Http.HttpClientChannel
+System.Runtime.Remoting.Channels.Http.HttpClientChannel::.ctor
+System.ServiceModel.Channels.MessageHeaders::get_Action
+System.Runtime.Remoting.Channels.Http.HttpClientChannel::set_IsSecured
+System.Runtime.Remoting.Channels.Ipc
+System.Runtime.Remoting.Channels.Ipc.IpcChannel
+System.Runtime.Remoting.Channels.Ipc.IpcClientChannel::CreateMessageSink(System.String,System.Object,System.String&)
+System.Runtime.Remoting.Channels.Tcp
+System.Runtime.Remoting.Channels.Tcp.TcpChannel::.ctor
+System.Runtime.Remoting.Channels.Tcp.TcpChannel::set_IsSecured
+Oracle.DataAccess.Client.OracleDataReader::GetOracleBFile
+System.Runtime.Remoting.Channels.Tcp.TcpClientChannel
+System.Runtime.Remoting.Channels.Tcp.TcpClientChannel::CreateMessageSink(System.String,System.Object,System.String&)
+System.Runtime.Remoting.Channels.ChannelServices
+System.Runtime.Remoting.Channels.ChannelServices::RegisterChannel
+System.Runtime.Remoting.Channels.IClientChannelSinkProvider
+System.Runtime.Remoting.Lifetime
+System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider
+System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider::.ctor
+System.Runtime.Remoting.Proxies.RemotingProxy
+System.Runtime.Remoting.Proxies.RealProxy
+System.Runtime.Remoting.Lifetime.ILease
+System.ServiceModel.Security.WSSecurityOneDotOneReceiveSecurityHeader
+System.Runtime.Remoting.Lifetime.ILease::get_CurrentLeaseTime
+System.Runtime.Remoting.Lifetime.ILease::get_CurrentState
+System.Runtime.Remoting.Lifetime.ILease::get_RenewOnCallTime
+System.ServiceModel.Channels.CommunicationObject
+System.Runtime.Remoting.Lifetime.ILease::get_SponsorshipTimeout
+System.Runtime.Remoting.Lifetime.ISponsor
+System.Runtime.Remoting.Lifetime.ISponsor::Renewal
+System.Runtime.Remoting.RemotingConfiguration::CustomErrorsEnabled(System.Boolean)
+System.Runtime.Remoting.RemotingConfiguration::IsActivationAllowed(System.Type)
+System.Runtime.Remoting.RemotingConfiguration::IsRemotelyActivatedClientType(System.String,System.String)
+System.Runtime.Remoting.RemotingConfiguration::IsWellKnownClientType(System.String,System.String)
+Oracle.DataAccess
+System.Runtime.Remoting.RemotingConfiguration::IsWellKnownClientType(System.Type)
+System.Runtime.Remoting.RemotingServices::Disconnect
+System.ServiceModel.Channels.MessageHeader::get_IsReferenceParameter
+System.Runtime.Remoting.RemotingServices::GetLifetimeService
+System.Runtime.Remoting.WellKnownClientTypeEntry
+System.Runtime.Remoting.WellKnownClientTypeEntry::get_ApplicationUrl
+System.Runtime.Remoting.WellKnownClientTypeEntry::get_ObjectUrl
+System.Runtime.Remoting.ActivatedClientTypeEntry::get_ApplicationUrl
+System.Runtime.Remoting.ActivatedClientTypeEntry::get_ObjectType
+System.EnterpriseServices.RemoteServicedComponentProxy::Invoke(System.Runtime.Remoting.Messaging.IMessage)
+System.EnterpriseServices.ServicedComponentProxy
+System.EnterpriseServices.ServicedComponentProxy::Invoke(System.Runtime.Remoting.Messaging.IMessage)
+System.EnterpriseServices.ServicedComponentProxy::Dispose(System.Boolean)
+System.ServiceModel
+System.ServiceModel.ClientBase`1
+System.ServiceModel.DuplexClientBase`1
+System.ServiceModel.DuplexClientBase`1::get_InnerDuplexChannel
+System.ServiceModel.EndpointAddressBuilder
+System.ServiceModel.EndpointIdentity
+System.ServiceModel.ChannelFactory
+System.ServiceModel.Dispatcher.OperationFormatter
+System.ServiceModel.Dispatcher.ThreadBehavior
+System.ServiceModel.ChannelFactory::get_Endpoint
+System.ServiceModel.ChannelFactory`1
+System.ServiceModel.ChannelFactory`1::Close
+System.ServiceModel.ChannelFactory`1::EndClose
+System.ServiceModel.AsyncResult
+System.ServiceModel.AsyncResult::get_AsyncWaitHandle
+System.ServiceModel.OperationContext
+System.ServiceModel.OperationContext::set_Current
+System.ServiceModel.WSHttpSecurity
+System.ServiceModel.NetTcpSecurity
+System.ServiceModel.NetNamedPipeSecurity
+System.ServiceModel.FederatedMessageSecurityOverHttp
+System.ServiceModel.Channels.PipeConnection
+System.ServiceModel.MessageSecurityOverTcp
+System.ServiceModel.ReliableSession
+System.ServiceModel.NamedPipeTransportSecurity
+Oracle.DataAccess.Client.OracleDataReader::GetOracleBlob
+Oracle.DataAccess.Client.OracleDataReader::GetOracleDate
+System.ServiceModel.ServiceHostBase
+System.ServiceModel.Http
+System.ServiceModel.Http.HttpTransportSecurity
+System.ServiceModel.Dispatcher.SyncMethodInvoker::Invoke(System.Object,System.Object[],System.Object[]&)
+System.ServiceModel.Dispatcher.DispatchOperationRuntime
+Oracle.DataAccess.Client.OracleCommand::set_NotificationAutoEnlist
+System.ServiceModel.Dispatcher.SecurityImpersonationBehavior::StartImpersonation(System.ServiceModel.Dispatcher.MessageRpc&,System.IDisposable&,System.Security.Principal.IPrincipal&,System.Boolean&)
+Oracle.DataAccess.Client.OracleDataAdapter::remove_RowUpdating
+System.ServiceModel.Channels.ConnectionModeReader
+System.ServiceModel.Channels.ConnectionModeReader::Complete()
+System.ServiceModel.Channels.Binding
+System.ServiceModel.Channels.Binding::get_CloseTimeout
+System.ServiceModel.Security.IdentityVerifier.DefaultIdentityVerifier
+System.ServiceModel.Channels.SecurityBindingElement
+System.ServiceModel.Channels.SecurityBindingElement::get_EnableUnsecuredResponse
+System.ServiceModel.Channels.MessageHeaders::get_Count
+System.ServiceModel.Channels.MessageHeader
+System.ServiceModel.Channels.MessageHeader::get_Name
+System.ServiceModel.Channels.AddressingHeader
+System.ServiceModel.Channels.CommunicationObject::EndClose
+System.ServiceModel.Channels.ActionHeader
+System.ServiceModel.Channels.RelatesToHeader
+System.ServiceModel.Channels.AddressHeader
+System.ServiceModel.Channels.Message
+System.ServiceModel.Channels.Message::get_IsDisposed
+System.ServiceModel.Channels.Message::get_IsEmpty
+System.ServiceModel.Channels.Message::get_IsFault
+System.ServiceModel.Channels.ContentOnlyMessage
+System.ServiceModel.Channels.Message::get_State
+System.ServiceModel.Channels.BodyWriterMessage
+System.ServiceModel.Channels.NullMessage
+System.ServiceModel.Channels.DelegatingMessage
+System.ServiceModel.Channels.WsrmAcknowledgmentHeader
+Oracle.DataAccess.Client.OracleParameter::set_OracleDbType
+System.ServiceModel.Channels.WsrmSequencedMessageHeader
+System.ServiceModel.Channels.CommunicationObject::Open
+System.ServiceModel.Channels.MessageIDHeader
+System.ServiceModel.Channels.ServiceChannelManager
+Oracle.DataAccess.Client.OracleCommand::set_AddRowid
+System.ServiceModel.Channels.MessageFault
+System.ServiceModel.Channels.MessageVersion
+System.ServiceModel.Channels.MessageVersion::get_Envelope
+System.ServiceModel.Channels.MessageVersion::get_Addressing
+System.ServiceModel.Security.UserNamePasswordClientCredential
+System.ServiceModel.Channels.LocalClientSecuritySettings
+System.ServiceModel.Channels.CommunicationObject::Close
+System.ServiceModel.Channels.CommunicationObject::BeginOpen
+Sybase.Data.AseClient.AseCommandBuilder
+System.ServiceModel.Channels.CommunicationObject::EndOpen
+System.ServiceModel.Channels.SocketConnection
+System.ServiceModel.Channels.PipeConnection::OnAsyncReadComplete(System.Boolean,System.Int32,System.Int32)
+System.ServiceModel.Description.ContractDescription::get_Operations
+Oracle.DataAccess.Client.OracleDataReader::GetOracleClob
+System.ServiceModel.Channels.ServiceChannel.SendAsyncResult
+System.ServiceModel.Channels.ServiceChannel::OnClose
+System.ServiceModel.Channels.ServiceChannelProxy::Invoke(System.Runtime.Remoting.Messaging.IMessage)
+System.ServiceModel.Security.WindowsClientCredential
+System.ServiceModel.Security.PeerCredential
+System.ServiceModel.Security.IssuedTokenClientCredential
+Oracle.DataAccess.Client.OracleDataReader::GetTimeSpan
+System.ServiceModel.Security.HttpDigestClientCredential
+System.ServiceModel.Security.X509CertificateInitiatorClientCredential
+System.ServiceModel.Security.BodyWriterMessage
+System.ServiceModel.Security.WSSecurityOneDotOneSendSecurityHeader
+Oracle.DataAccess.Client.OracleDataReader::GetOracleTimeSpanLTZ
+System.ServiceModel.Security.SecurityAppliedMessage
+Oracle.DataAccess.Client.OracleDataAdapter::remove_RowUpdated
+System.ServiceModel.Description.ClientCredentials
+System.ServiceModel.Description.ServiceEndpoint
+System.ServiceModel.Description.ServiceEndpoint::get_Binding
+System.ServiceModel.Description.ClientViaBehavior
+System.ServiceModel.Description.MetadataExchangeClient
+System.ServiceModel.Description.MetadataImporter
+System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurity
+Oracle
+Oracle.DataAccess.Client
+Oracle.DataAccess.Client.OracleCommand::set_AddToStatementCache
+Oracle.DataAccess.Client.OracleCommand::set_ArrayBindCount
+Oracle.DataAccess.Client.OracleCommand::set_BindByName
+Oracle.DataAccess.Client.OracleCommand::set_FetchSize
+Oracle.DataAccess.Client.OracleCommand::set_InitialLOBFetchSize
+Oracle.DataAccess.Client.OracleCommand::set_Notification
+Oracle.DataAccess.Client.OracleCommand::set_QueryProperties
+Oracle.DataAccess.Client.OracleCommand::set_SaveProperties
+Oracle.DataAccess.Client.OracleConnection
+Oracle.DataAccess.Client.OracleConnection::OpenWithNewPassword
+Oracle.DataAccess.Client.OracleConnection::PurgeStatementCache
+Oracle.DataAccess.Client.OracleDataAdapter::set_Requery
+Oracle.DataAccess.Client.OracleConnection::SetSessionInfo
+Oracle.DataAccess.Client.OracleConnection::add_StateChange
+Sybase.Data.AseClient.AseConnection::add_InfoMessage
+Oracle.DataAccess.Client.OracleConnection::remove_StateChange
+Oracle.DataAccess.Client.OracleDataAdapter
+Oracle.DataAccess.Client.OracleDataReader::GetOracleBlobForUpdate
+Oracle.DataAccess.Client.OracleDataReader::GetOracleClobForUpdate
+Oracle.DataAccess.Client.OracleDataReader::GetOracleDecimal
+Oracle.DataAccess.Client.OracleDataReader::GetOracleIntervalDS
+Oracle.DataAccess.Client.OracleDataReader::GetOracleTimeSpan
+Oracle.DataAccess.Client.OracleDataReader::GetOracleTimeSpanTZ
+Oracle.DataAccess.Client.OracleDataReader::GetOracleValue
+Oracle.DataAccess.Client.OracleDataReader::GetOracleValues
+Oracle.DataAccess.Client.OracleDataReader::GetOracleXmlType
+Oracle.DataAccess.Client.OracleDataReader::GetXmlReader
+Oracle.DataAccess.Client.OracleParameter::ResetOracleType
+Oracle.DataAccess.Client.OracleParameter::get_ArrayBindSize
+Oracle.DataAccess.Client.OracleParameter::get_ArrayBindStatus
+Oracle.DataAccess.Client.OracleParameter::get_CollectionType
+Oracle.DataAccess.Types
+Oracle.DataAccess.Types.OracleBFile
+Oracle.DataAccess.Types.OracleBFile::Read
+Oracle.DataAccess.Types.OracleRefCursor
+Sybase.Data.AseClient.AseCommand
+Sybase.Data.AseClient.AseConnection::set_NamedParameters
+Sybase.Data.AseClient.AseConnection::add_StateChange
+Sybase.Data.AseClient.AseConnection::remove_StateChange
+Sybase.Data.AseClient.AseDataAdapter
+Sybase.Data.AseClient.AseDataAdapter::add_RowUpdated
+Sybase.Data.AseClient.AseDataAdapter::add_RowUpdating
+Sybase.Data.AseClient.AseDataAdapter::remove_RowUpdated
+Sybase.Data.AseClient.AseDataAdapter::remove_RowUpdating
+Sybase.Data.AseClient.AseDataReader::GetUInt16
+Sybase.Data.AseClient.AseParameter
+Sybase.Data.AseClient.AseParameter::set_AseDbType
+
+ *************************************************************************** 
+CreateFilterDataServices - SUCCESS

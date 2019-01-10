@@ -1,0 +1,226 @@
+/////////////////////////////////////////////////////////////////////////////
+// LoadRunner : Multiprotocol Code generation Settings                     //
+// Mercury Interactive Corp.                                               //
+/////////////////////////////////////////////////////////////////////////////
+
+{{ ACTIVE PROTOCOLS LIST:
+    ( 1) dotNet2  (name=dotNet2)
+}}
+{{ FILTERING ORDER:
+    ( 1) CleanExtraEvents  (name=CleanExtraEvents)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : CleanExtraEvents_Init
+          Default    : CleanExtraEvents_DefaultProcess
+          Cleanup    : CleanExtraEvents_CleanUp
+                       
+    ( 2) ApiEventParser  (name=ApiEventParser)
+          State      : OFF
+          Protocols  : 
+          Module     : api_event_parser.dll
+          Initialize : ApiEventParser_Init
+          Default    : ApiEventParser_Default
+          Cleanup    : ApiEventParser_CleanUp
+                       
+    ( 3) MetadataInfo  (name=MetadataInfo)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : MetadataInfo_Init
+          Default    : MetadataInfo_DefaultProcess
+          Cleanup    : MetadataInfo_CleanUp
+                       
+    ( 4) CacheWrapper1  (name=CacheWrapper)
+          State      : OFF
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : CacheWrapper_Init
+          Default    : CacheWrapper1_DefaultProcess
+          Cleanup    : CacheWrapper_CleanUp
+                       
+    ( 5) *SECTION_DIVIDER_1  (name=Break)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : Break_Init
+          Default    : Break_DefaultProcess
+          Cleanup    : Break_CleanUp
+                       
+    ( 6) CacheWrapper2  (name=CacheWrapper)
+          State      : OFF
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : CacheWrapper_Init
+          Default    : CacheWrapper2_DefaultProcess
+          Cleanup    : CacheWrapper_CleanUp
+                       
+    ( 7) *SECTION_DIVIDER_2  (name=Break)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : Break_Init
+          Default    : Break_DefaultProcess
+          Cleanup    : Break_CleanUp
+                       
+    ( 8) AdoLoopDetectorFilter  (name=AdoLoopDetectorFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : AdoLoopDetectorFilter_Init
+          Default    : AdoLoopDetectorFilter_DefaultProcess
+          Cleanup    : AdoLoopDetectorFilter_CleanUp
+                       
+    ( 9) WcfDetectorFilter  (name=WcfDetectorFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : WcfDetectorFilter_Init
+          Default    : WcfDetectorFilter_DefaultProcess
+          Cleanup    : WcfDetectorFilter_CleanUp
+                       
+    (10) AsyncContextDetectorFilter  (name=AsyncContextDetectorFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : AsyncContextDetectorFilter_Init
+          Default    : AsyncContextDetectorFilter_DefaultProcess
+          Cleanup    : AsyncContextDetectorFilter_CleanUp
+                       
+    (11) CacheWrapper3  (name=CacheWrapper)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : CacheWrapper_Init
+          Default    : CacheWrapper3_DefaultProcess
+          Cleanup    : CacheWrapper_CleanUp
+                       
+    (12) *SECTION_DIVIDER_3  (name=Break)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : Break_Init
+          Default    : Break_DefaultProcess
+          Cleanup    : Break_CleanUp
+                       
+    (13) ADOReadLoopHandlerFilter  (name=ADOReadLoopHandlerFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : ADOReadLoopHandlerFilter_Init
+          Default    : ADOReadLoopHandlerFilter_DefaultProcess
+          Cleanup    : ADOReadLoopHandlerFilter_CleanUp
+                       
+    (14) WcfHandlerFilter  (name=WcfHandlerFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : WcfHandlerFilter_Init
+          Default    : WcfHandlerFilter_DefaultProcess
+          Cleanup    : WcfHandlerFilter_CleanUp
+                       
+    (15) AsyncContextHandlerFilter  (name=AsyncContextHandlerFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : AsyncContextHandlerFilter_Init
+          Default    : AsyncContextHandlerFilter_DefaultProcess
+          Cleanup    : AsyncContextHandlerFilter_CleanUp
+                       
+    (16) TaskAwaitHandlerFilter  (name=TaskAwaitHandlerFilter)
+          State      : ON
+          Protocols  : dotNet2
+          Module     : DotNetSpecialUMFiltersWrappers.dll
+          Initialize : TaskAwaitHandlerFilter_Init
+          Default    : TaskAwaitHandlerFilter_DefaultProcess
+          Cleanup    : TaskAwaitHandlerFilter_CleanUp
+                       
+    (17) *SECTION_DIVIDER_4  (name=Break)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : Break_Init
+          Default    : Break_DefaultProcess
+          Cleanup    : Break_CleanUp
+                       
+    (18) CleanDependentEvents  (name=CleanDependentEvents)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : CleanExtraEvents_Init
+          Default    : CleanExtraEvents_DefaultProcessPreScript
+          Cleanup    : CleanExtraEvents_CleanUp
+                       
+    (19) ThinkTime  (name=ThinkTime)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_com_filters.dll
+          Initialize : ThinkTime_Init
+          Default    : ThinkTime_DefaultProcess
+          Cleanup    : ThinkTime_CleanUp
+                       
+    (20) FixedThinkTime  (name=FixedThinkTime)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_com_filters.dll
+          Initialize : FixedThinkTime_Init
+          Default    : FixedThinkTime_DefaultProcess
+          Cleanup    : FixedThinkTime_CleanUp
+                       
+    (21) CAPI_CodeGen  (name=GenericCodeGen)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_basic_filters.dll
+          Initialize : GenericCodeGen_Init
+          Default    : GenericCodeGen_DefaultProcess
+          Cleanup    : GenericCodeGen_CleanUp
+                       
+    (22) C_CodeGen  (name=C_CodeGen)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : C_CodeGen_Init
+          Default    : C_CodeGen_DefaultProcess
+          Cleanup    : C_CodeGen_CleanUp
+                       
+    (23) VBA_CodeGen  (name=VB_CodeGen)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : VBA_CodeGen_Init
+          Default    : VB_CodeGen_DefaultProcess
+          Cleanup    : VB_CodeGen_CleanUp
+                       
+    (24) VBS_CodeGen  (name=VB_CodeGen)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : VBS_CodeGen_Init
+          Default    : VB_CodeGen_DefaultProcess
+          Cleanup    : VB_CodeGen_CleanUp
+                       
+    (25) JS_CodeGen  (name=VB_CodeGen)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : JS_CodeGen_Init
+          Default    : VB_CodeGen_DefaultProcess
+          Cleanup    : VB_CodeGen_CleanUp
+                       
+    (26) DotNet_CodeGen  (name=DotNet_CodeGen)
+          State      : ON
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : DotNet_CodeGen_Init
+          Default    : DotNet_CodeGen_DefaultProcess
+          Cleanup    : DotNet_CodeGen_CleanUp
+                       
+    (27) Java_CodeGen  (name=Java_CodeGen)
+          State      : OFF
+          Protocols  : 
+          Module     : lrc_code_gen_filter.dll
+          Initialize : Java_CodeGen_Init
+          Default    : Java_CodeGen_DefaultProcess
+          Cleanup    : Java_CodeGen_CleanUp
+                       
+}}

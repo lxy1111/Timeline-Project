@@ -1,0 +1,34 @@
+;[Graph definition]
+[Graph definition]
+;count=0
+count=1
+;GraphTitle=
+GraphTitle=% Disk Time (PhysicalDisk _Total)
+;DataPointLabel_1=
+DataPointLabel_1=offline_datapoint_2
+;LineTitle_1=
+LineTitle_1=localhost
+;LineGroup_1=
+LineGroup_1=0
+;YAxisTitle=
+YAxisTitle=% Disk Time (PhysicalDisk _Total)
+;GraphGroupMenuTitle=Resource Monitoring
+GraphGroupMenuTitle=Windows 资源
+;XAxisTitle=Elapsed Scenario Time (seconds)
+XAxisTitle=已用场景时间 (秒)
+;XAxisIsElapsedTime=TRUE
+XAxisIsElapsedTime=TRUE
+;LineType=NOSTEP
+LineType=NOSTEP
+;BuildUnderLoadGraph=TRUE
+BuildUnderLoadGraph=TRUE
+;AggregateFunction=AVG
+AggregateFunction=AVG
+;MissingData=PREVIOUS
+MissingData=PREVIOUS
+;GranularityMode=NOTINCLUDEZERO
+GranularityMode=NOTINCLUDEZERO
+;NoDataBehavior=RemoveGraph
+NoDataBehavior=RemoveGraph
+GraphType=es_rm_svr_res_nt
+DataPointDescr_1=% Disk Time 指所选磁盘驱动器忙于为读或写入请求提供服务所用的时间的百分比。

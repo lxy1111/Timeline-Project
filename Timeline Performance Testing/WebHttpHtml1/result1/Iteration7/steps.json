@@ -1,0 +1,32 @@
+[
+    {
+        "stepId": "STEP34",
+        "stepName": "Url: iecompatviewlist.xml",
+        "infFile": "t8.inf",
+        "time": 1547022135853
+    },
+    {
+        "stepId": "STEP35",
+        "stepName": "Custom Request: addNews",
+        "infFile": "t9.inf",
+        "time": 1547022135938
+    },
+    {
+        "stepId": "STEP36",
+        "stepName": "Custom Request: newsList_2",
+        "infFile": "t10.inf",
+        "time": 1547022136015
+    },
+    {
+        "stepId": "STEP37",
+        "stepName": "Custom Request: newsList_3",
+        "infFile": "t11.inf",
+        "time": 1547022136086
+    },
+    {
+        "stepId": "STEP38",
+        "stepName": "Custom Request: moreNews",
+        "infFile": "t12.inf",
+        "time": 1547022136161
+    }
+]

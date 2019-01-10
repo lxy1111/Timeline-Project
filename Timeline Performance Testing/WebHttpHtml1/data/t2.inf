@@ -1,0 +1,17 @@
+[t2]
+FileName1=t2.html
+URL1=http://localhost:53703/
+Total=4
+ContentType=application/javascript
+SnapshotXmlFile=snapshot_2.xml
+RequestHeaderFile=t2_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t2_ResponseHeader.txt
+FileName2=t2_main.html
+URL2=http://localhost:8100/build/main.js
+FileName3=t2_livereload.html
+URL3=http://localhost:35729/livereload.js?snipver=1
+FileName4=t2_favicon.ico
+URL4=http://localhost:8100/assets/icon/favicon.ico
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,14 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+开始自动日志消息堆栈 – 迭代 175。	[MsgId: MMSG-10545]
+正在开始操作 Action。	[MsgId: MMSG-15919]
+Action.cs(23): 集合 send_message	[MsgId: MMSG-17988]
+Action.cs(23): 错误: 在扩展 DotnetExtensionReplay.dll 中调用 abort-cleanup 函数时出现异常: System Exceptions: EXCEPTION_ACCESS_VIOLATION	[MsgId: MERR-10488]

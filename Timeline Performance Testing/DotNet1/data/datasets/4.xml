@@ -1,0 +1,122 @@
+﻿<ReaderValues dsId="4004" correlationTemplate="		lr.save_string(&quot;{3}&quot;, valueTable_4.Rows[{1}][&quot;{2}&quot;].ToString());">
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="values" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="values">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="id_0" type="xs:int" minOccurs="0" />
+                <xs:element name="content_1" type="xs:string" minOccurs="0" />
+                <xs:element name="imageURL_2" type="xs:string" minOccurs="0" />
+                <xs:element name="author_3" type="xs:string" minOccurs="0" />
+                <xs:element name="posttime_4" type="xs:string" minOccurs="0" />
+                <xs:element name="username_5" type="xs:string" minOccurs="0" />
+                <xs:element name="password_6" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <values>
+    <id_0>15</id_0>
+    <content_1>dsadasdasdas</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 12:38</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>16</id_0>
+    <content_1>dddddddddddddddddddddddddddddddddddddddddsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 12:39</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>17</id_0>
+    <content_1>我是一个大天才啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 15:45</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>18</id_0>
+    <content_1>dasdada</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 18:35</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>19</id_0>
+    <content_1>dsadasdasdasdas</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 18:35</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>20</id_0>
+    <content_1>gggggggggggggggggggggggggg</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月18日 18:36</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>21</id_0>
+    <content_1>jjjjjjjkkkkkkkkkkkkkkkkkk</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月19日 10:24</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>22</id_0>
+    <content_1>kkkkkkkkkkkkkkkkk</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月19日 10:36</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>24</id_0>
+    <content_1>hello dasldkasjldkaslkdjaskljdlkasjdsioa</content_1>
+    <imageURL_2>C:\\Users\\xsk\\Pictures\\pic.jpg</imageURL_2>
+    <author_3>lxy1</author_3>
+    <posttime_4>2018年12月24日 13:54</posttime_4>
+    <username_5>lxy1</username_5>
+    <password_6>12345</password_6>
+  </values>
+  <values>
+    <id_0>25</id_0>
+    <content_1>test message</content_1>
+    <imageURL_2>C:\Users\xsk\Pictures\pic.jpg</imageURL_2>
+    <author_3>tester1</author_3>
+    <posttime_4>2018年12月30日 15:05</posttime_4>
+    <username_5>tester1</username_5>
+    <password_6>tester1</password_6>
+  </values>
+  <values>
+    <id_0>26</id_0>
+    <content_1>test message</content_1>
+    <imageURL_2>C:\Users\xsk\Pictures\pic.jpg</imageURL_2>
+    <author_3>test</author_3>
+    <posttime_4>2018年12月30日 15:20</posttime_4>
+    <username_5>test</username_5>
+    <password_6>test</password_6>
+  </values>
+</ReaderValues>

@@ -1,0 +1,5 @@
+[Diagnostics]
+Status=-1
+[Collate Recovery]
+Scenario=C:\Users\xsk\Desktop\Èí¼ş²âÊÔ±¸·İ\Controller\sendmessage_20.lrs
+Completed=0

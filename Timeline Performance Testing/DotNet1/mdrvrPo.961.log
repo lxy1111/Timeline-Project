@@ -1,0 +1,22 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+开始自动日志消息堆栈 – 迭代 667。	[MsgId: MMSG-10545]
+正在开始操作 Action。	[MsgId: MMSG-15919]
+Action.cs(23): 集合 send_message	[MsgId: MMSG-17988]
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);	[MsgId: MMSG0]
+Action.cs(31): Event 40: MySqlConnection_3.Open();	[MsgId: MMSG0]
+错误: Action.cs(32): MySql.Data.MySqlClient.MySqlException (0x80004005): error connecting: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
+   在 MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 32
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+

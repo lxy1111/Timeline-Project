@@ -1,0 +1,14 @@
+开始自动日志消息堆栈 – 迭代 57。	[MsgId: MMSG-10545]
+Action.c(18): web_add_header("UA-CPU") 已成功  	[MsgId: MMSG-26392]
+Action.c(21): web_url("iecompatviewlist.xml") 已启动  	[MsgId: MMSG-26355]
+Action.c(21): web_url("iecompatviewlist.xml") 已成功，27402 个正文字节，467 个标头字节  	[MsgId: MMSG-26386]
+Action.c(30): 通知: 事务 "send_message" 已启动。	[MsgId: MMSG-16999]
+Action.c(32): web_add_auto_header("Origin") 已启动  	[MsgId: MMSG-26355]
+Action.c(32): web_add_auto_header("Origin") 已成功  	[MsgId: MMSG-26392]
+Action.c(35): web_custom_request("addNews") 已启动  	[MsgId: MMSG-26355]
+Action.c(35): web_custom_request("addNews") 已成功，4 个正文字节，249 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+Action.c(46): web_custom_request("newsList_2") 已启动  	[MsgId: MMSG-26355]
+Action.c(46): 错误 -26612: 对于“http://localhost:8080/news/newsList”，HTTP 状态代码=500 (Internal Server Error)  	[MsgId: MERR-26612]
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+

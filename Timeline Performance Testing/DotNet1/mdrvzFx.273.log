@@ -1,0 +1,86 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+开始自动日志消息堆栈 – 迭代 404。	[MsgId: MMSG-10545]
+Action.cs(113): Read 7 fields for row 7364	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7365	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7366	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7367	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7368	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7369	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7370	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7371	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7372	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7373	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7374	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7375	[MsgId: MMSG0]
+错误: Action.cs(113): System.OutOfMemoryException: 引发类型为“System.OutOfMemoryException”的异常。
+   在 System.Diagnostics.StackFrameHelper.GetMethodBase(Int32 i)
+   在 System.Diagnostics.StackTrace.CaptureStackTrace(Int32 iSkip, Boolean fNeedFileInfo, Thread targetThread, Exception e)
+   在 LoadRunner.LrApiWrapper.FormatNavigationString(String message)
+   在 LoadRunner.LrApiWrapper.log(String message)
+   在 Mercury.LoadRunner.DotNetProtocol.Replay.LrReplayUtils.DoDataRead(DbDataReader reader, DataTable& valueTable, Boolean readToEnd, Int32 numRecordsToRead)
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 113
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+
+开始自动日志消息堆栈 – 迭代 392。	[MsgId: MMSG-10545]
+Action.cs(113): Read 7 fields for row 6595	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6596	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6597	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6598	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6599	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6600	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6601	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6602	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6603	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6604	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6605	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 6606	[MsgId: MMSG0]
+错误: Action.cs(113): System.OutOfMemoryException: 引发类型为“System.OutOfMemoryException”的异常。
+   在 System.String.CreateStringFromEncoding(Byte* bytes, Int32 byteLength, Encoding encoding)
+   在 System.Text.UTF8Encoding.GetString(Byte[] bytes, Int32 index, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlPacket.ReadString(Int64 length)
+   在 MySql.Data.Types.MySqlInt32.MySql.Data.Types.IMySqlValue.ReadValue(MySqlPacket packet, Int64 length, Boolean nullVal)
+   在 MySql.Data.MySqlClient.NativeDriver.ReadColumnValue(Int32 index, MySqlField field, IMySqlValue valObject)
+   在 MySql.Data.MySqlClient.ResultSet.ReadColumnData(Boolean outputParms)
+   在 MySql.Data.MySqlClient.ResultSet.NextRow(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlDataReader.Read()
+   在 Mercury.LoadRunner.DotNetProtocol.Replay.LrReplayUtils.DoDataRead(DbDataReader reader, DataTable& valueTable, Boolean readToEnd, Int32 numRecordsToRead)
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 113
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+
+开始自动日志消息堆栈 – 迭代 497。	[MsgId: MMSG-10545]
+Action.cs(113): Read 7 fields for row 7297	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7298	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7299	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7300	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7301	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7302	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7303	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7304	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7305	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7306	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7307	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 7308	[MsgId: MMSG0]
+错误: Action.cs(113): System.OutOfMemoryException: 引发类型为“System.OutOfMemoryException”的异常。
+   在 System.RuntimeType.RuntimeTypeCache.MemberInfoCache`1.AddMethod(RuntimeType declaringType, RuntimeMethodHandleInternal method, CacheType cacheType)
+   在 System.RuntimeType.GetMethodBase(RuntimeType reflectedType, RuntimeMethodHandleInternal methodHandle)
+   在 System.RuntimeType.GetMethodBase(RuntimeType reflectedType, IRuntimeMethodInfo methodHandle)
+   在 System.Diagnostics.StackFrameHelper.GetMethodBase(Int32 i)
+   在 System.Diagnostics.StackTrace.CaptureStackTrace(Int32 iSkip, Boolean fNeedFileInfo, Thread targetThread, Exception e)
+   在 LoadRunner.LrApiWrapper.FormatNavigationString(String message)
+   在 LoadRunner.LrApiWrapper.log(String message)
+   在 Mercury.LoadRunner.DotNetProtocol.Replay.LrReplayUtils.DoDataRead(DbDataReader reader, DataTable& valueTable, Boolean readToEnd, Int32 numRecordsToRead)
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 113
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+

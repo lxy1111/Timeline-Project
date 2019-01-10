@@ -1,0 +1,73 @@
+[General]
+Type=dotNet2
+DefaultCfg=default.cfg
+ParameterFile=
+GlobalParameterFile=
+RunType=CS-Interpreter
+NewFunctionHeader=1
+ActionLogicExt=action_logic
+ScriptLanguage=CS
+LastActiveAction=Action
+DevelopTool=Vugen
+MajorVersion=12
+MinorVersion=55
+LastModifyVer=12.55.0.911
+ActiveTypes=dotNet2
+AdditionalTypes=dotNet2
+GenerateTypes=dotNet2
+ParamLeftBrace={
+ParamRightBrace=}
+LastCodeGenerationVer=12.55.0.911
+DisableRegenerate=0
+Encoding=
+Description=
+ScriptLocale=zh-CN
+[Interpreters]
+vuser_init=CS-Interpreter
+Action=CS-Interpreter
+vuser_end=CS-Interpreter
+[ExtraFiles]
+AssemblyInfo.cs=
+globals.cs=
+globalsFixed.cs=
+Script.csproj=
+Script.csproj.user=
+Script.props.user=
+Script.sln=
+[Actions]
+vuser_init=vuser_init.cs
+Action=Action.cs
+vuser_end=vuser_end.cs
+[VuserProfiles]
+Profiles=Default Profile
+[CfgFiles]
+Default Profile=default.cfg
+[RunLogicFiles]
+Default Profile=default.usp
+[Modified Actions]
+vuser_init=1
+Action=1
+vuser_end=0
+[Recorded Actions]
+vuser_init=1
+Action=1
+vuser_end=0
+[Replayed Actions]
+vuser_init=1
+Action=1
+vuser_end=1
+[TransactionsOrder]
+Order="register__*delimiter*__login__*delimiter*__send_message__*delimiter*__refresh_message__*delimiter*__more_message"
+[StateManagement]
+LastReplayStatus=1
+[ActiveReplay]
+LastReplayedRunName=
+ActiveRunName=
+[Transactions]
+register=
+login=
+send_message=
+refresh_message=
+more_message=
+[Rendezvous]
+send_message=

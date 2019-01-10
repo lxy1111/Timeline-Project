@@ -1,0 +1,6 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DebugProgram>F:\LoadRunner12\bin\mdrv.exe</DebugProgram>
+    <VuserName>C:\Users\xsk\Documents\VuGen\Scripts\DotNet1\DotNet1.usr</VuserName>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,32 @@
+[Scenario]
+Product=HPE LoadRunner Controller
+Version=12.55.0.0
+Path=C:\Users\xsk\Desktop\软件测试备份\Controller\sendmessage_20.lrs
+Subject=sendmessage_20
+Result_file=C:\Users\xsk\Documents\VuGen\Scripts\DotNet1\res\res.lrr
+Description=
+ResultName=res
+Time_Zone=-28800
+Start_time=1546180083
+Daylight_Bias=0
+Stop_time=1546180920
+[Configuration]
+Public_local=1
+Is_mix=1
+Is_runner_file=0
+Runner_file=
+[Running_mode]
+Start_reason=按命令
+Stop_reason=按用户
+[Data Collection]
+FullData=1
+[Scenario_summary]
+Scenario Type=Manual Scenario
+Goal Profile Name=计划 1
+Mode=场景计划
+Scenario Duration=启动 40 (个) Vuser: 每 00:00:05 (时:分:秒) 启动 1 个; 运行 00:10:00 (时:分:秒); 同时停止 全部 (个) Vuser
+Load Behavior=每隔 00:00:01 (时:分:秒) 初始化 1 个 Vuser
+[Scripts]
+DotNet1=C:\Users\xsk\Documents\VuGen\Scripts\DotNet1\DotNet1.usr
+[Scripts_types]
+DotNet1=dotNet2

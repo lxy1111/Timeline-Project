@@ -1,0 +1,34 @@
+;[Graph definition]
+[Graph definition]
+;count=0
+count=1
+;GraphTitle=
+GraphTitle=% Processor Time (Processor _Total)
+;DataPointLabel_1=
+DataPointLabel_1=offline_datapoint_0
+;LineTitle_1=
+LineTitle_1=localhost
+;LineGroup_1=
+LineGroup_1=0
+;YAxisTitle=
+YAxisTitle=% Processor Time (Processor _Total)
+;GraphGroupMenuTitle=Resource Monitoring
+GraphGroupMenuTitle=Windows 资源
+;XAxisTitle=Elapsed Scenario Time (seconds)
+XAxisTitle=已用场景时间 (秒)
+;XAxisIsElapsedTime=TRUE
+XAxisIsElapsedTime=TRUE
+;LineType=NOSTEP
+LineType=NOSTEP
+;BuildUnderLoadGraph=TRUE
+BuildUnderLoadGraph=TRUE
+;AggregateFunction=AVG
+AggregateFunction=AVG
+;MissingData=PREVIOUS
+MissingData=PREVIOUS
+;GranularityMode=NOTINCLUDEZERO
+GranularityMode=NOTINCLUDEZERO
+;NoDataBehavior=RemoveGraph
+NoDataBehavior=RemoveGraph
+GraphType=es_rm_svr_res_nt
+DataPointDescr_1=% Processor Time 指处理器用来执行非闲置线程时间的百分比。计算方法是，度量处理器用来执行空闲线程的时间，然后用 100% 减去该值。(每个处理器有一个空闲线程，该线程在没有其他线程可以运行时消耗周期)。此计数器是处理器活动的主要指示器，显示在采样间隔期间所观察的繁忙时间平均百分比。应注意，对处理器是否空闲的计算是在系统时钟的内部采样间隔期间(10ms)执行的。考虑到现在的处理器速度非常快，因此，在处理器可能会用大量时间为系统时钟采样间隔之间的线程提供服务时，% Processor Time 会低估处理器利用率。当恰好进行采样后即向计时器发出信号时，更可能对应用程序做出不准确地度量，基于工作负荷的计时器应用程序是一个这样的示例。

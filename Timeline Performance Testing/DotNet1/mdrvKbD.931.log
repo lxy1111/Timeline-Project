@@ -1,0 +1,38 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+开始自动日志消息堆栈 – 迭代 183。	[MsgId: MMSG-10545]
+Action.cs(113): Read 7 fields for row 11954	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11955	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11956	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11957	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11958	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11959	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11960	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11961	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11962	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11963	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11964	[MsgId: MMSG0]
+Action.cs(113): Read 7 fields for row 11965	[MsgId: MMSG0]
+错误: Action.cs(113): System.OutOfMemoryException: 引发类型为“System.OutOfMemoryException”的异常。
+   在 System.Globalization.TextInfo.InternalChangeCaseString(IntPtr handle, IntPtr handleOrigin, String localeName, String str, Boolean isToUpper)
+   在 System.Globalization.TextInfo.ToLower(String str)
+   在 System.String.ToLower(CultureInfo culture)
+   在 LoadRunner.LrApiWrapper.<>c__DisplayClass1_0.<FormatNavigationString>b__1(String a)
+   在 System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 LoadRunner.LrApiWrapper.<FormatNavigationString>b__1_0(StackFrame f)
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 LoadRunner.LrApiWrapper.FormatNavigationString(String message)
+   在 LoadRunner.LrApiWrapper.log(String message)
+   在 Mercury.LoadRunner.DotNetProtocol.Replay.LrReplayUtils.DoDataRead(DbDataReader reader, DataTable& valueTable, Boolean readToEnd, Int32 numRecordsToRead)
+   在 Script.VuserClass.Action() 位置 c:\Users\xsk\Documents\VuGen\Scripts\DotNet1\Action.cs:行号 113
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+

@@ -1,0 +1,2 @@
+[Hosts]
+localhost=C:\Users\xsk\Documents\VuGen\Scripts\DotNet1\res\localhost_35.eve

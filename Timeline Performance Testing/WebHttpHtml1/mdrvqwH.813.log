@@ -1,0 +1,11 @@
+开始自动日志消息堆栈。	[MsgId: MMSG-10546]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(67): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(67): web_custom_request("login") 已成功，107 个正文字节，128 个标头字节，10 个分块开销字节  	[MsgId: MMSG-26385]
+vuser_init.c(78): web_custom_request("newsList") 已启动  	[MsgId: MMSG-26355]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:53703/”的 websocket 连接(RelFrameId=1，内部 ID=21)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 正在保留 URI 为“ws://localhost:35729/livereload”的 websocket 连接(RelFrameId=1，内部 ID=22)  	[MsgId: MMSG-27636]
+vuser_init.c(78): 错误 -26612: 对于“http://localhost:8080/news/newsList”，HTTP 状态代码=500 (Internal Server Error)  	[MsgId: MERR-26612]
+结束自动日志消息堆栈。	[MsgId: MMSG-10544]
+
+

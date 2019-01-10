@@ -1,0 +1,13 @@
+POST /news/addNews HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Referer: http://localhost:8100/
+Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2
+Origin: http://localhost:8100
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: localhost:8080
+Content-Length: 78
+Connection: Keep-Alive
+Cache-Control: no-cache
+

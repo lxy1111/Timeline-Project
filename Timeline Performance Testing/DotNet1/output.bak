@@ -1,0 +1,602 @@
+通知: 已从脚本\bin 目录加载配置文件“Timeline.exe.Config”。
+虚拟用户脚本启动时间: 2019/1/9 16:13:05
+正在开始操作 vuser_init。
+vuser_init.cs(26): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+vuser_init.cs(30): Event 2: ObjectHandle_1.Unwrap();
+vuser_init.cs(33): 通知: 事务 "register" 已启动。
+vuser_init.cs(38): Event 3: new MySqlConnection(connectionString_1);
+vuser_init.cs(41): Event 4: MySqlConnection_1.Open();
+vuser_init.cs(46): Event 5: new MySqlCommand(cmdText_1, MySqlConnection_1);
+vuser_init.cs(49): Event 6: MySqlCommand_1.ExecuteReader();
+vuser_init.cs(52): Event 127: LrReplayUtils.DoDataRead(MySqlDataReader_1, out valueTable_1, true, 0);
+vuser_init.cs(57): Event 8: MySqlDataReader_1.Close();
+vuser_init.cs(68): Event 11: new MySqlCommand(cmdText_2, MySqlConnection_1);
+vuser_init.cs(71): Event 12: MySqlCommand_2.ExecuteNonQuery();
+vuser_init.cs(83): 通知: 事务"register"以"Pass"状态结束 (持续时间: 0.5853)。
+vuser_init.cs(85): 通知: 事务 "login" 已启动。
+vuser_init.cs(87): Event 30: MySqlConnection_2.Open();
+vuser_init.cs(92): Event 31: new MySqlCommand(cmdText_3, MySqlConnection_2);
+vuser_init.cs(95): Event 32: MySqlCommand_3.ExecuteReader();
+vuser_init.cs(98): Event 128: LrReplayUtils.DoDataRead(MySqlDataReader_2, out valueTable_2, false, 1);
+vuser_init.cs(100): Read 2 fields for row 1
+vuser_init.cs(103): Event 34: MySqlDataReader_2.Close();
+vuser_init.cs(120): Event 41: new MySqlCommand(cmdText_4, MySqlConnection_3);
+vuser_init.cs(123): Event 42: MySqlCommand_4.ExecuteReader();
+vuser_init.cs(126): Event 129: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 10);
+vuser_init.cs(128): Read 7 fields for row 1
+vuser_init.cs(128): Read 7 fields for row 2
+vuser_init.cs(128): Read 7 fields for row 3
+vuser_init.cs(128): Read 7 fields for row 4
+vuser_init.cs(128): Read 7 fields for row 5
+vuser_init.cs(128): Read 7 fields for row 6
+vuser_init.cs(128): Read 7 fields for row 7
+vuser_init.cs(128): Read 7 fields for row 8
+vuser_init.cs(128): Read 7 fields for row 9
+vuser_init.cs(131): Event 104: MySqlDataReader_3.Close();
+vuser_init.cs(139): 通知: 事务"login"以"Pass"状态结束 (持续时间: 0.0328)。
+正在结束操作 vuser_init。
+正在运行 Vuser...
+正在开始迭代 1。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0137)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0031)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0024)。
+正在结束操作 Action。
+正在结束迭代 1。
+正在开始迭代 2。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0122)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0032)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0023)。
+正在结束操作 Action。
+正在结束迭代 2。
+正在开始迭代 3。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0146)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0075)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0031)。
+正在结束操作 Action。
+正在结束迭代 3。
+正在开始迭代 4。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0134)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0039)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0034)。
+正在结束操作 Action。
+正在结束迭代 4。
+正在开始迭代 5。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0124)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0040)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0030)。
+正在结束操作 Action。
+正在结束迭代 5。
+正在开始迭代 6。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0123)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(87): Read 7 fields for row 15
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0043)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(113): Read 7 fields for row 15
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0032)。
+正在结束操作 Action。
+正在结束迭代 6。
+正在开始迭代 7。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0125)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(87): Read 7 fields for row 15
+Action.cs(87): Read 7 fields for row 16
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0052)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(113): Read 7 fields for row 15
+Action.cs(113): Read 7 fields for row 16
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0097)。
+正在结束操作 Action。
+正在结束迭代 7。
+正在开始迭代 8。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0033)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(87): Read 7 fields for row 15
+Action.cs(87): Read 7 fields for row 16
+Action.cs(87): Read 7 fields for row 17
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0033)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(113): Read 7 fields for row 15
+Action.cs(113): Read 7 fields for row 16
+Action.cs(113): Read 7 fields for row 17
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0032)。
+正在结束操作 Action。
+正在结束迭代 8。
+正在开始迭代 9。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0027)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(87): Read 7 fields for row 15
+Action.cs(87): Read 7 fields for row 16
+Action.cs(87): Read 7 fields for row 17
+Action.cs(87): Read 7 fields for row 18
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0036)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(113): Read 7 fields for row 15
+Action.cs(113): Read 7 fields for row 16
+Action.cs(113): Read 7 fields for row 17
+Action.cs(113): Read 7 fields for row 18
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0036)。
+正在结束操作 Action。
+正在结束迭代 9。
+正在开始迭代 10。
+正在开始操作 Action。
+Action.cs(23): 集合 send_message
+Action.cs(28): Event 39: new MySqlConnection(connectionString_3);
+Action.cs(31): Event 40: MySqlConnection_3.Open();
+Action.cs(37): Event 1: Activator.CreateInstance(assemblyName_1, "MS.Internal.SystemXmlExtension");
+Action.cs(41): Event 2: ObjectHandle_1.Unwrap();
+Action.cs(44): 通知: 事务 "send_message" 已启动。
+Action.cs(49): Event 110: new MySqlConnection(connectionString_2);
+Action.cs(52): Event 111: MySqlConnection_3.Open();
+Action.cs(61): Event 114: new MySqlCommand(cmdText_3, MySqlConnection_3);
+Action.cs(64): Event 113: MySqlCommand_3.ExecuteNonQuery();
+Action.cs(70): 通知: 事务"send_message"以"Pass"状态结束 (持续时间: 0.0034)。
+Action.cs(72): 通知: 事务 "refresh_message" 已启动。
+Action.cs(79): Event 118: new MySqlCommand(cmdText_4, MySqlConnection_2);
+Action.cs(82): Event 119: MySqlCommand_4.ExecuteReader();
+Action.cs(85): Event 416: LrReplayUtils.DoDataRead(MySqlDataReader_3, out valueTable_3, true, 11);
+Action.cs(87): Read 7 fields for row 1
+Action.cs(87): Read 7 fields for row 2
+Action.cs(87): Read 7 fields for row 3
+Action.cs(87): Read 7 fields for row 4
+Action.cs(87): Read 7 fields for row 5
+Action.cs(87): Read 7 fields for row 6
+Action.cs(87): Read 7 fields for row 7
+Action.cs(87): Read 7 fields for row 8
+Action.cs(87): Read 7 fields for row 9
+Action.cs(87): Read 7 fields for row 10
+Action.cs(87): Read 7 fields for row 11
+Action.cs(87): Read 7 fields for row 12
+Action.cs(87): Read 7 fields for row 13
+Action.cs(87): Read 7 fields for row 14
+Action.cs(87): Read 7 fields for row 15
+Action.cs(87): Read 7 fields for row 16
+Action.cs(87): Read 7 fields for row 17
+Action.cs(87): Read 7 fields for row 18
+Action.cs(87): Read 7 fields for row 19
+Action.cs(90): Event 187: MySqlDataReader_3.Close();
+Action.cs(96): 通知: 事务"refresh_message"以"Pass"状态结束 (持续时间: 0.0036)。
+Action.cs(98): 通知: 事务 "more_message" 已启动。
+Action.cs(105): Event 193: new MySqlCommand(cmdText_5, MySqlConnection_2);
+Action.cs(108): Event 194: MySqlCommand_5.ExecuteReader();
+Action.cs(111): Event 417: LrReplayUtils.DoDataRead(MySqlDataReader_4, out valueTable_4, true, 11);
+Action.cs(113): Read 7 fields for row 1
+Action.cs(113): Read 7 fields for row 2
+Action.cs(113): Read 7 fields for row 3
+Action.cs(113): Read 7 fields for row 4
+Action.cs(113): Read 7 fields for row 5
+Action.cs(113): Read 7 fields for row 6
+Action.cs(113): Read 7 fields for row 7
+Action.cs(113): Read 7 fields for row 8
+Action.cs(113): Read 7 fields for row 9
+Action.cs(113): Read 7 fields for row 10
+Action.cs(113): Read 7 fields for row 11
+Action.cs(113): Read 7 fields for row 12
+Action.cs(113): Read 7 fields for row 13
+Action.cs(113): Read 7 fields for row 14
+Action.cs(113): Read 7 fields for row 15
+Action.cs(113): Read 7 fields for row 16
+Action.cs(113): Read 7 fields for row 17
+Action.cs(113): Read 7 fields for row 18
+Action.cs(113): Read 7 fields for row 19
+Action.cs(116): Event 262: MySqlDataReader_4.Close();
+Action.cs(124): 通知: 事务"more_message"以"Pass"状态结束 (持续时间: 0.0035)。
+正在结束操作 Action。
+正在结束迭代 10。
+正在结束 Vuser...
+正在开始操作 vuser_end。
+正在结束操作 vuser_end。
+Vuser 已终止。

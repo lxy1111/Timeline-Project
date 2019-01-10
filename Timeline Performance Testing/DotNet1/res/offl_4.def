@@ -1,0 +1,34 @@
+;[Graph definition]
+[Graph definition]
+;count=0
+count=1
+;GraphTitle=
+GraphTitle=Available MBytes (Memory)
+;DataPointLabel_1=
+DataPointLabel_1=offline_datapoint_4
+;LineTitle_1=
+LineTitle_1=localhost
+;LineGroup_1=
+LineGroup_1=0
+;YAxisTitle=
+YAxisTitle=Available MBytes (Memory)
+;GraphGroupMenuTitle=Resource Monitoring
+GraphGroupMenuTitle=Windows 资源
+;XAxisTitle=Elapsed Scenario Time (seconds)
+XAxisTitle=已用场景时间 (秒)
+;XAxisIsElapsedTime=TRUE
+XAxisIsElapsedTime=TRUE
+;LineType=NOSTEP
+LineType=NOSTEP
+;BuildUnderLoadGraph=TRUE
+BuildUnderLoadGraph=TRUE
+;AggregateFunction=AVG
+AggregateFunction=AVG
+;MissingData=PREVIOUS
+MissingData=PREVIOUS
+;GranularityMode=NOTINCLUDEZERO
+GranularityMode=NOTINCLUDEZERO
+;NoDataBehavior=RemoveGraph
+NoDataBehavior=RemoveGraph
+GraphType=es_rm_svr_res_nt
+DataPointDescr_1=Available MBytes 指能立刻分配给一个进程或系统使用的物理内存数量，以 MB 为单位表示。它等于分配给待机(缓存的)、空闲和零分页列表内存的总和。

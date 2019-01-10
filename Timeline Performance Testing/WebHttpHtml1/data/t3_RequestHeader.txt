@@ -1,0 +1,10 @@
+GET /livereload HTTP/1.1
+Origin: http://localhost:8100
+Sec-WebSocket-Key: Y0CHL2+zxGJj0cS3yADcYw==
+Connection: Upgrade
+Upgrade: websocket
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: localhost:35729
+Cache-Control: no-cache
+

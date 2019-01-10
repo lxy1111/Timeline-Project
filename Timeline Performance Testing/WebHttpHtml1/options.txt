@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IC:\Users\xsk\Desktop\软件测试备份\Scripts\WebHttpHtml1
+-IF:\LoadRunner12\include
+-ec:\users\xsk\desktop\软件测试备份\scripts\webhttphtml1\\logfile.log
+c:\users\xsk\desktop\软件测试备份\scripts\webhttphtml1\\combined_WebHttpHtml1.c
+c:\users\xsk\desktop\软件测试备份\scripts\webhttphtml1\\pre_cci.c
