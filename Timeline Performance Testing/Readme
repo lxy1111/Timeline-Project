@@ -1,6 +1,9 @@
-this is timeline performance testing scipts
+this is timeline performance testing
 
 DotNet1：桌面端性能测试脚本
 
 WebHttpHtml1：web端性能测试脚本
 
+web端文件夹：web端性能测试计划、场景、报告
+
+桌面端文件夹：桌面端性能测试计划、场景、报告
