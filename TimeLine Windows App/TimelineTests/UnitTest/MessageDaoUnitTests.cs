@@ -31,7 +31,7 @@ namespace Timeline.server.Tests
         }
 
         [TestMethod]
-        public void GetAllNewsTest()
+        public void invoke_GetAllNews_then_return_expected_results()
         {
             var mockDb = new Mock<IDatabase>();
             var sut = new MessageDao(mockDb.Object);
@@ -43,7 +43,7 @@ namespace Timeline.server.Tests
         }
 
         [TestMethod]
-        public void LoadMessagesTest()
+        public void invoke_LoadMessages_then_return_mock_data_of_database()
         {
 
             var user1 = new User("username1", "password1");
@@ -78,7 +78,7 @@ namespace Timeline.server.Tests
         }
 
         [TestMethod()]
-        public void PublishMessageTest()
+        public void publish_a_message_then_return_true()
         {
             User user1 = new User("lxy1", "12345");
             Message message1 = new Message("MockContent1", "MockUrl1", "MockTime", user1);
@@ -95,7 +95,7 @@ namespace Timeline.server.Tests
         }
 
         [TestMethod()]
-        public void updateMessageInfoTest()
+        public void updatemessage_then_return_three_more_messages()
         {
             var user1 = new User("username1", "password1");
             var user2 = new User("username2", "password2");

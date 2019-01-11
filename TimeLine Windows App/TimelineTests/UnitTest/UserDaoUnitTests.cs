@@ -29,41 +29,64 @@ namespace Timeline.server.Tests
         }
 
         [TestMethod()]
-        public void CheckRegisterTest()
+        public void check_register_return_true()
         {
             User user1 = new User("lxy1", "12345");
-            User user2 = new User("111", "111");
             IDataParameter theParameter1 = new MySqlParameter();
             IDataParameter theParameter2 = new MySqlParameter();
             mockDb.Setup(d => d.CreateParameter("USER_NAME", user1.UserName)).Returns(theParameter1);
-            mockDb.Setup(d => d.CreateParameter("USER_NAME", user2.UserName)).Returns(theParameter2);
+          
             mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckRegisterSql, theParameter1)).Returns(true);
             mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckRegisterSql, theParameter2)).Returns(null);
-            server.CheckRegister(user1);
-            server.CheckRegister(user2);
+            Assert.AreEqual(true,server.CheckRegister(user1));
+         
+        }
+        [TestMethod()]
+        public void check_register_return_false()
+        {
+         
+            User user2 = new User("111", "111");
+    
+            IDataParameter theParameter2 = new MySqlParameter();
+         
+            mockDb.Setup(d => d.CreateParameter("USER_NAME", user2.UserName)).Returns(theParameter2);
+   
+            mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckRegisterSql, theParameter2)).Returns(null);
+            Assert.AreEqual(false,server.CheckRegister(user2));
         }
 
+
+
+
         [TestMethod()]
-        public void CheckLoginTest()
+        public void check_login_user1_return_true()
         {
             User user1 = new User("lxy1", "12345");
-            User user2 = new User("111", "111");
+           
             IDataParameter username1 = new MySqlParameter();
-            IDataParameter username2 = new MySqlParameter();
+       
             IDataParameter password1 = new MySqlParameter();
-            IDataParameter password2 = new MySqlParameter();
+         
             mockDb.Setup(d => d.CreateParameter("USER_NAME", user1.UserName)).Returns(username1);
             mockDb.Setup(d => d.CreateParameter("PASSWORD", user1.UserPassword)).Returns(password1);
-            mockDb.Setup(d => d.CreateParameter("USER_NAME", user2.UserName)).Returns(username2);
-            mockDb.Setup(d => d.CreateParameter("PASSWORD", user1.UserPassword)).Returns(password2);
-            mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckLoginSql, username1,password1)).Returns(true);
-            mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckLoginSql, username2,password2)).Returns(null);
-            server.CheckLogin(user1);
-            server.CheckLogin(user2);
+            mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckLoginSql, username1, password1)).Returns(true);
+           Assert.AreEqual(true, server.CheckLogin(user1));
         }
 
         [TestMethod()]
-        public void RegisterUserTest()
+        public void check_login_user2_return_false()
+        { 
+            User user2 = new User("111", "111");
+            IDataParameter username2 = new MySqlParameter();
+            IDataParameter password2 = new MySqlParameter();
+            mockDb.Setup(d => d.CreateParameter("USER_NAME", user2.UserName)).Returns(username2);
+            mockDb.Setup(d => d.CreateParameter("PASSWORD", user2.UserPassword)).Returns(password2);
+            mockDb.Setup(d => d.ExecuteScalar(UserDao.CheckLoginSql, username2,password2)).Returns(null);
+            Assert.AreEqual(false,server.CheckLogin(user2));
+        }
+
+        [TestMethod()]
+        public void register_a_new_user()
         {
             User user1 = new User("lxy1", "12345");
             IDataParameter username1 = new MySqlParameter();
